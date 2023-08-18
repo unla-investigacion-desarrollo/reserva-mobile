@@ -1,29 +1,21 @@
-import {StatusBar, StyleSheet} from 'react-native';
-import {
-  background,
-  neutral,
-  primary,
-  primaryLighter,
-} from '../../../constants/colors';
+import { StyleSheet } from 'react-native';
+import { background, primary, primaryLighter } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   home: {
     flex: 1,
-    backgroundColor: background,
+    backgroundColor: background
   },
   body: {
-    marginHorizontal: 20,
+    marginHorizontal: 20
   },
   topLine: {
+    flex: 1,
+    width: '100%',
     marginTop: 18,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  searchBar: {
-    borderWidth: 1,
-    borderColor: neutral,
-    borderRadius: 16,
-    width: 268,
+    gap: 4
   },
   addSightingButton: {
     width: 48,
@@ -31,10 +23,10 @@ export const styles = StyleSheet.create({
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: primary,
+    backgroundColor: primary
   },
   addSightingIcon: {
     fontSize: 24,
-    color: primaryLighter,
-  },
+    color: primaryLighter
+  }
 });

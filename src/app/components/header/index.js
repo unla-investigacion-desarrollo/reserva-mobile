@@ -1,7 +1,7 @@
-import {View, Text} from 'react-native';
-import {styles} from './styles';
+import { View, Text } from 'react-native';
+import { styles } from './styles';
 import Icon from 'react-native-vector-icons/Feather';
-import {neutralLighter} from '../../../constants/colors';
+import { neutralLighter } from '../../../constants/colors';
 
 export function Header() {
   return (

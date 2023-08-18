@@ -1,9 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {
-  neutralDarker,
-  neutralLighter,
-  primary,
-} from '../../../constants/colors';
+import { StyleSheet } from 'react-native';
+import { neutralDarker, neutralLighter, primary } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   navBar: {
