@@ -1,15 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {NavBarContainer as NavBar} from './components/navBar';
-import {View} from 'react-native';
-import {styles} from './styles';
+import { NavigationContainer } from '@react-navigation/native';
+import { NavStackContainer as NavStack } from './navigation/navStack';
+import { View } from 'react-native';
+import styles from './styles';
 
 function App() {
   return (
     <View style={styles.app}>
       <NavigationContainer>
-        <NavBar />
+        <NavStack />
       </NavigationContainer>
     </View>
   );

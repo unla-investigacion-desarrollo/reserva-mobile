@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { background, primary, primaryLighter } from '../../../constants/colors';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   home: {
     flex: 1,
     backgroundColor: background

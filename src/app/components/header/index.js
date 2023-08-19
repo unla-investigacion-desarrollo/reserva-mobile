@@ -1,9 +1,8 @@
 import { View, Text } from 'react-native';
-import { styles } from './styles';
 import Icon from 'react-native-vector-icons/Feather';
-import { neutralLighter } from '../../../constants/colors';
+import styles from './styles';
 
-export function Header() {
+export default function Header() {
   return (
     <View style={styles.header}>
       <Text style={styles.title}>¡Buen dia!</Text>
@@ -14,5 +13,3 @@ export function Header() {
     </View>
   );
 }
-
-export default Header;

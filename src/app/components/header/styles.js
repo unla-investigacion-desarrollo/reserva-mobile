@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {neutralLighter, primary} from '../../../constants/colors';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   header: {
     backgroundColor: primary,
     height: 'auto',

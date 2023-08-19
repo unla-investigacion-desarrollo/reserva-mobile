@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { neutralDarker, neutralLighter, primary } from '../../../constants/colors';
+import {
+  neutralDarker,
+  neutralLighter,
+  primary
+} from '../../../constants/colors';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   navBar: {
     height: 58,
     backgroundColor: neutralLighter,
@@ -9,19 +13,19 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 12,
     shadowOffset: {
       width: 0,
-      height: 12,
+      height: 12
     },
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
-    elevation: 12,
+    elevation: 12
   },
   icon: {
     fontSize: 24,
-    color: neutralDarker,
+    color: neutralDarker
   },
   selectedIcon: {
     fontSize: 24,
-    color: primary,
+    color: primary
   },
   label: {
     marginHorizontal: 8,
@@ -29,6 +33,6 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     lineHeight: 16,
-    color: primary,
-  },
+    color: primary
+  }
 });
