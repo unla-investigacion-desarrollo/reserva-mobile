@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {neutralLighter, primary} from '../../../constants/colors';
+import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 export const styles = StyleSheet.create({
   header: {
@@ -11,6 +12,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingTop: getStatusBarHeight(),
   },
   icons: {
     display: 'flex',

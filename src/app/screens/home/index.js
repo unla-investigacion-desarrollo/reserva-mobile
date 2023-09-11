@@ -1,4 +1,5 @@
-import {Pressable, ScrollView, StatusBar, View} from 'react-native';
+import React from 'react';
+import {Platform, Pressable, ScrollView, StatusBar, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Header from '../../components/header';
@@ -7,7 +8,9 @@ import {styles} from './styles';
 import {primary} from '../../../constants/colors';
 
 export function Home() {
-  StatusBar.setBackgroundColor(primary);
+  if (Platform.OS === 'android') {
+    StatusBar.setBackgroundColor(primary);
+  }
   return (
     <View style={styles.home}>
       <Header />
