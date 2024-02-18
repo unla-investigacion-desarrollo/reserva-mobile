@@ -1,0 +1,50 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+/android/app/google-services/
+/ios/GoogleServices/
+googleServices
+
+# builds
+ios
+android
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# Envs
+.env
+.env.*
+!.env.example
+
+# typescript
+*.tsbuildinfo
