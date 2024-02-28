@@ -2,17 +2,17 @@ import type TranslateOptions from 'i18next';
 import i18n from 'i18next';
 import memoize from 'lodash.memoize';
 
+import { KEYS } from '#/common/constants/storage';
+import { StorageService } from '#/common/services';
+import { DefaultLocale, Language, Tx, TxOrString } from '#/common/types/i18n';
 
 import { I18N_SEPARATOR, LOCALES } from './constants';
 import { resources } from './resources';
-import { DefaultLocale, Language, Tx, TxOrString } from '#/common/types/i18n';
-import { StorageService } from '#/common/services';
-import { KEYS } from '#/common/constants/storage';
 
 export const getLanguage = (): Language => StorageService.storage.getString(KEYS.LOCALE) as Language;
 export const setLanguage = (language: Language): void => StorageService.storage.set(KEYS.LOCALE, language);
 export const getI18nLanguage = () => i18n.language.split('_')?.[0];
-export const isEnglish = () => getI18nLanguage() === LOCALES.en;
+export const isEnglish = () => getI18nLanguage() === LOCALES.es;
 
 export const translate = memoize(
   (key: TxOrString, options = undefined) => i18n.t(key, options),

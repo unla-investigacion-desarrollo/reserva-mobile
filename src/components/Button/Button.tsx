@@ -35,6 +35,7 @@ export interface ButtonProps extends PressableProps {
   iconWidth?: number;
   Svg?: SvgComponent;
   intent?: ButtonIntents;
+  active?: boolean;
 }
 
 export function Button({
@@ -51,7 +52,8 @@ export function Button({
   iconWidth,
   Svg,
   children,
-  intent
+  intent,
+  active
 }: ButtonProps) {
   const InnerContainer = innerStyle ? View : Fragment;
 
@@ -71,7 +73,7 @@ export function Button({
         intentStyles?.ENABLED?.CONTAINER,
         styles.container,
         style,
-        pressed && { ...pressedStyles },
+        (pressed || active) && { ...pressedStyles },
         (disabled || loading) && { ...disabledStyles }
       ]}
       disabled={disabled}>
@@ -100,7 +102,7 @@ export function Button({
               style={[
                 intentStyles?.ENABLED?.TEXT,
                 textStyle,
-                isPressed && intentStyles?.PRESSED?.TEXT,
+                (isPressed || active) && intentStyles?.PRESSED?.TEXT,
                 (disabled || loading) && intentStyles?.DISABLED?.TEXT
               ]}>
               {title}
