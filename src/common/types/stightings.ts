@@ -1,7 +1,19 @@
+import { SightingUser } from './user';
+
 export type SightingType = {
-  id: number;
   name: string;
   category: string;
+  active: boolean;
+};
+
+export type SightingField = {
+  title: string;
+  description: string;
+};
+
+export type SightingImage = {
+  id: number;
+  url: string;
 };
 
 export type Sighting = {
@@ -13,23 +25,7 @@ export type Sighting = {
   latitude: number;
   longitude: number;
   type: SightingType;
-  createdBy: {
-    id: number;
-    name: string;
-    username: string;
-  };
-  approvedBy: {
-    id: number;
-    name: string;
-    username: string;
-  };
-  images: {
-    id: number;
-    url: string;
-  }[];
-  fields: {
-    id: number;
-    title: string;
-    description: string;
-  }[];
+  createdBy: SightingUser;
+  fields: SightingField[];
+  images: SightingImage[];
 };

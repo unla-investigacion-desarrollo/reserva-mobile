@@ -54,6 +54,9 @@ export default () => {
           {
             ios: {
               useFrameworks: 'static'
+            },
+            android: {
+              usesCleartextTraffic: true
             }
           }
         ],
@@ -68,6 +71,9 @@ export default () => {
         eas: {
           projectId: 'b6ca9c92-773d-4b9e-8c22-5d5bb3c11ecc'
         }
+      },
+      experiments: {
+        typedRoutes: true
       }
     }
   };

@@ -9,6 +9,9 @@ export const SIGHTING_CARDS_GAP = 16;
 export const TYPE_FILTERS_GAP = 12;
 
 export const styles = StyleSheet.create({
+  activityIndicator: {
+    margin: scale(15)
+  },
   button: {
     borderRadius: 24,
     borderWidth: 1,

@@ -1,17 +1,26 @@
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import { APIProvider } from '#/common/api';
 import { MAIN_STACK_ROUTES } from '#/common/constants/routes';
+
+function Navigation() {
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      {MAIN_STACK_ROUTES.map(route => (
+        <Stack.Screen key={route} name={route} />
+      ))}
+    </Stack>
+  );
+}
 
 export default function Layout() {
   return (
-    <>
-      <StatusBar animated style="light" />
-      <Stack screenOptions={{ headerShown: false }}>
-        {MAIN_STACK_ROUTES.map(route => (
-          <Stack.Screen key={route} name={route} />
-        ))}
-      </Stack>
-    </>
+    // eslint-disable-next-line react-native/no-inline-styles
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <APIProvider>
+        <Navigation />
+      </APIProvider>
+    </GestureHandlerRootView>
   );
 }

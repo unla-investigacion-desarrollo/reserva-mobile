@@ -14,7 +14,7 @@ export default function Layout() {
         screenOptions={{
           headerShown: false,
           tabBarInactiveTintColor: black,
-          tabBarActiveTintColor: primary.dark,
+          tabBarActiveTintColor: primary.default,
           tabBarStyle: tabBarStyles.tabBar
         }}>
         {TAB_BAR_ROUTES.map(route => (

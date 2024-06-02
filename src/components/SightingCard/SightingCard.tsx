@@ -1,10 +1,13 @@
-import { View, ViewStyle } from 'react-native';
+import { Pressable, View, ViewStyle } from 'react-native';
 
 import { Image, ImageStyle } from 'expo-image';
+import { Link } from 'expo-router';
 
-import { PawIcon, TreeIcon } from '#/assets';
 import { black, neutral } from '#/common/constants/colors';
+import { ROUTE_LINKS } from '#/common/constants/routes';
 import { CATEGORIES } from '#/common/constants/sightings';
+import { buildImageUrl } from '#/common/models/images';
+import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { shadowStyles } from '#/styles/shadows';
 
@@ -17,24 +20,30 @@ export type SightingCardProps = {
 };
 
 export function SightingCard({ sighting, style }: SightingCardProps) {
-  const Icon = sighting.type.category === CATEGORIES.FAUNA ? PawIcon : TreeIcon;
+  const Icon = getCategoryIcon(sighting.type.category);
   const iconColor =
     sighting.type.category === CATEGORIES.FAUNA ? { fill: neutral.default } : { stroke: neutral.default };
+
   return (
-    <View style={[styles.sightingCard, shadowStyles.baseShadow(black), style]}>
-      <Image source={sighting.images[0].url} style={styles.image as ImageStyle} />
-      <View style={styles.body}>
-        <Text numberOfLines={1} style={styles.name}>
-          {sighting.name}
-        </Text>
-        <Text numberOfLines={1} style={styles.scientificName}>
-          {sighting.scientificName}
-        </Text>
-        <View style={styles.typeRow}>
-          <Icon width={ICON_SIZE} height={ICON_SIZE} {...iconColor} />
-          <Text style={styles.type}>{sighting.type.name}</Text>
+    <Link
+      href={{ pathname: ROUTE_LINKS.Sighting, params: { id: sighting.id } }}
+      asChild
+      style={[styles.sightingCard, shadowStyles.baseShadow(black), style]}>
+      <Pressable>
+        <Image source={buildImageUrl(sighting.images[0])} style={styles.image as ImageStyle} />
+        <View style={styles.body}>
+          <Text numberOfLines={1} style={styles.name}>
+            {sighting.name}
+          </Text>
+          <Text numberOfLines={1} style={styles.scientificName}>
+            {sighting.scientificName}
+          </Text>
+          <View style={styles.typeRow}>
+            <Icon width={ICON_SIZE} height={ICON_SIZE} {...iconColor} />
+            <Text style={styles.type}>{sighting.type.name}</Text>
+          </View>
         </View>
-      </View>
-    </View>
+      </Pressable>
+    </Link>
   );
 }

@@ -1,4 +1,8 @@
+import { PawIcon, TreeIcon } from '#/assets';
+
+import { CATEGORIES } from '../constants/sightings';
 import { Sighting, SightingType } from '../types/stightings';
+import { ValueOf } from '../types/utilities';
 import { hasLength, normalize } from '../utils/string';
 
 export const getTypesFromSightings = (sightings: Sighting[]) =>
@@ -19,3 +23,6 @@ export const filterSightings = (sightings: Sighting[], type: SightingType | null
         : true)
   );
 };
+
+export const getCategoryIcon = (category: ValueOf<typeof CATEGORIES>) =>
+  category === CATEGORIES.FAUNA ? PawIcon : TreeIcon;

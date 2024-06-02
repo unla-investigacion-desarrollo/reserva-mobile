@@ -12,12 +12,14 @@ export function Header() {
   const { top } = useSafeAreaInsets();
   return (
     <View style={styles.container(top) as ViewStyle}>
-      <View style={styles.header}>
-        <Text style={styles.text}>¡Buen Dia!</Text>
-        <View style={styles.iconSection}>
-          <BellIcon stroke={white} style={styles.icon} />
-          <HeartIcon stroke={white} style={styles.icon} />
-          <UserIcon stroke={white} style={styles.icon} />
+      <View style={styles.background}>
+        <View style={styles.header}>
+          <Text style={styles.text}>¡Buen Dia!</Text>
+          <View style={styles.iconSection}>
+            <BellIcon stroke={white} style={styles.icon} />
+            <HeartIcon stroke={white} style={styles.icon} />
+            <UserIcon stroke={white} style={styles.icon} />
+          </View>
         </View>
       </View>
     </View>

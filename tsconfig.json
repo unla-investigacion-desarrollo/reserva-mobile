@@ -27,5 +27,6 @@
     "jest.config.js",
     ".react-native.config.js",
     ".eslintrc.js"
-  ]
+  ],
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
