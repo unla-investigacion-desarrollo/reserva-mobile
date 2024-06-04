@@ -35,17 +35,19 @@ export function Home() {
   const { data: sightingTypesData } = useGetTypes();
 
   useEffect(() => {
-    if (isSuccess && sightingData && !isEmpty(sightingData)) {
-      setSightings([...sightings, ...sightingData]);
+    if (isSuccess && sightingData && sightingData.data && !isEmpty(sightingData.data)) {
+      setSightings([...sightings, ...sightingData.data]);
     }
   }, [sightingData]);
 
-  const sightingTypes = sightingTypesData ?? [];
+  const sightingTypes = sightingTypesData?.data ?? [];
   const [selectedType, setSelectedType] = useState<SightingType | null>(null);
   const shownSightings = filterSightings(sightings, selectedType, searchValue);
 
   const handleListEnd = () => {
-    if (!isFetching) setPage(page + 1);
+    if (!isFetching) {
+      setPage(page + 1);
+    }
   };
 
   return (

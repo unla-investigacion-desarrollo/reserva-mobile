@@ -2,12 +2,12 @@ import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { APIProvider } from '#/common/api';
-import { MAIN_STACK_ROUTES } from '#/common/constants/routes';
+import { AUTH_STACK_ROUTES } from '#/common/constants/routes';
 
 function Navigation() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      {MAIN_STACK_ROUTES.map(route => (
+      {AUTH_STACK_ROUTES.map(route => (
         <Stack.Screen key={route} name={route} />
       ))}
     </Stack>

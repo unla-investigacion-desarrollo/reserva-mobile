@@ -31,8 +31,9 @@ export interface ButtonProps extends PressableProps {
   icon?: ImageSourcePropType;
   title?: TxOrString;
   iconSize?: number;
-  iconColor?: ColorValue;
-  iconWidth?: number;
+  iconStroke?: ColorValue;
+  iconFill?: ColorValue;
+  iconStrokeWidth?: number;
   Svg?: SvgComponent;
   intent?: ButtonIntents;
   active?: boolean;
@@ -48,8 +49,9 @@ export function Button({
   textStyle,
   icon,
   iconSize,
-  iconColor,
-  iconWidth,
+  iconFill,
+  iconStroke,
+  iconStrokeWidth,
   Svg,
   children,
   intent,
@@ -88,9 +90,9 @@ export function Button({
                 <Svg
                   width={iconSize}
                   height={iconSize}
-                  strokeWidth={iconWidth}
-                  fill={iconColor}
-                  stroke={iconColor}
+                  strokeWidth={iconStrokeWidth}
+                  fill={iconFill}
+                  stroke={iconStroke}
                 />
               )}
             </>

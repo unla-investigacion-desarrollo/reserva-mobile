@@ -1,21 +1,37 @@
 import { StyleSheet } from 'react-native';
 
-import { accent, background, black, neutral, primary } from '#/common/constants/colors';
+import { accent, background, black, neutral, primary, white } from '#/common/constants/colors';
 import { MEDIUM_WEIGHT, REGULAR_WEIGHT, SIZES } from '#/common/constants/fonts';
 import { WINDOW_HEIGHT } from '#/common/constants/platform';
+import { colorWithOpacity } from '#/common/utils/color';
 import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
-import { ABSOLUTE, CENTER, ROW } from '#/styles/positions';
+import { ABSOLUTE, CENTER, FLEX_START, ROW } from '#/styles/positions';
 import { FULL_SIZE } from '#/styles/sizes';
 
 export const FIELD_GAP = 12;
 
-export const ICON_SIZE = scale(16);
+export const CATEGORY_ICON_SIZE = scale(16);
+export const BACK_ICON_SIZE = scale(24);
 
 export const styles = StyleSheet.create({
   SightingContainer: {
     backgroundColor: background,
     flex: 1
+  },
+  backButton: {
+    alignSelf: FLEX_START,
+    backgroundColor: colorWithOpacity(black, 50),
+    borderRadius: 15,
+    columnGap: scale(4),
+    justifyContent: FLEX_START,
+    marginLeft: scale(8),
+    marginTop: verticalScale(16),
+    padding: scale(8),
+    position: ABSOLUTE
+  },
+  backButtonText: {
+    ...fontMaker({ color: white })
   },
   backgroundImage: {
     height: WINDOW_HEIGHT * (7 / 16)
@@ -65,7 +81,7 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 12,
     borderBottomLeftRadius: 12,
     marginBottom: verticalScale(-8),
-    zIndex: 10
+    zIndex: 8
   }),
   headerInfo: {
     backgroundColor: background,

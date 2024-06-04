@@ -26,6 +26,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'off',
     'comma-dangle': ['error', 'never'],
+    curly: ['error', 'all'],
     semi: 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-empty-function': 'off',

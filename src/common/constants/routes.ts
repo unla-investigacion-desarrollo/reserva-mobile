@@ -1,8 +1,8 @@
 import { HomeIcon, MapPinIcon } from '#/assets';
 
-import { RouteLinks } from '../types/routes';
-
 export const ROUTES = {
+  Login: 'login',
+  App: '(app)',
   Home: 'index',
   Sighting: 'sighting/[id]',
   Map: 'map',
@@ -11,6 +11,8 @@ export const ROUTES = {
 } as const;
 
 export const ROUTE_NAMES = {
+  [ROUTES.Login]: 'Login',
+  [ROUTES.App]: 'App',
   [ROUTES.Home]: 'Home',
   [ROUTES.Sighting]: 'Sighting',
   [ROUTES.Map]: 'Map',
@@ -18,13 +20,17 @@ export const ROUTE_NAMES = {
   [ROUTES.HomeStack]: 'Home'
 } as const;
 
-export const ROUTE_LINKS: RouteLinks = {
+export const ROUTE_LINKS = {
   Home: '/',
-  Sighting: '/(tabBar)/(homeStack)/sighting/[id]',
+  Login: '/login',
+  Sighting: '/(app)/(tabBar)/(homeStack)/sighting/[id]',
   Map: '/map',
   TabBar: '/',
-  HomeStack: '/'
+  HomeStack: '/',
+  App: '/'
 } as const;
+
+export const AUTH_STACK_ROUTES = [ROUTES.Login, ROUTES.App];
 
 export const MAIN_STACK_ROUTES = [ROUTES.TabBar] as const;
 

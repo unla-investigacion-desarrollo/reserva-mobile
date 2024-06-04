@@ -5,6 +5,7 @@ import mapImage from './images/map.png';
 import notesImage from './images/notes.png';
 import registerImage from './images/register.png';
 import sorryImage from './images/sorry.png';
+import ArrowLeftIcon from './svgs/arrow-left.svg';
 import BellIcon from './svgs/bell.svg';
 import CameraIcon from './svgs/camera.svg';
 import CrossIcon from './svgs/cross.svg';
@@ -28,5 +29,6 @@ export {
   MapPinIcon,
   TreeIcon,
   SearchIcon,
-  PawIcon
+  PawIcon,
+  ArrowLeftIcon
 };

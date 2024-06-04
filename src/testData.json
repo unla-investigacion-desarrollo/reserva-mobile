@@ -1,280 +1,56 @@
 {
-    "sightings": [
-        {
-            "id": 1,
-            "name": "Pájaro carpintero real",
-            "scientificName": "Colaptes melanochloros",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 1,
-                "name": "aves",
-                "category": "fauna"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Colaptes_melanochloros_-Bataguassu%2C_Mato_Grosso_do_Sul%2C_Brazil-8.jpg/500px-Colaptes_melanochloros_-Bataguassu%2C_Mato_Grosso_do_Sul%2C_Brazil-8.jpg"
-                },
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Green-barred_woodpecker_-_Lip_Kee.jpg/440px-Green-barred_woodpecker_-_Lip_Kee.jpg"
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "menta de jardín",
-            "scientificName": "Mentha spicata",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 2,
-                "name": "hiervas",
-                "category": "flora"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/20140727Mentha_spicata3.jpg/220px-20140727Mentha_spicata3.jpg"
-                },
-                {
-                    "id": 1,
-                    "url": "https://www.gardenia.net/wp-content/uploads/2023/04/NQpWP4wQGmuUTU3ESFfl7qGYeXABT7n2PV21IWKT-780x520.webp"
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "name": "carpintero bataraz chico",
-            "scientificName": "Veniliornis mixtus",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 1,
-                "name": "aves",
-                "category": "fauna"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/180913151/1800"
-                },
-                {
-                    "id": 1,
-                    "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/180913101/480"
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Jacaranda",
-            "scientificName": "Jacaranda mimosifolia",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 4,
-                "name": "arboles",
-                "category": "flora"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Jacaranda1212.jpg/500px-Jacaranda1212.jpg"
-                },
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/J._mimosifolia-racimo.1.jpg/440px-J._mimosifolia-racimo.1.jpg"
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Liebre europea",
-            "scientificName": "Lepus europaeus",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 5,
-                "name": "mamíferos",
-                "category": "fauna"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Feldhase_Schiermonnikoog.JPG/500px-Feldhase_Schiermonnikoog.JPG"
-                },
-                {
-                    "id": 1,
-                    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYYGBgaHBwcHBwaGhoYGhwaHBwcHBocGhocIS4lHB4rIRkZJjgnKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHzQrJCw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIALcBEwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAACBQEGB//EADkQAAIBAgQEBAUEAAYCAwEAAAECEQAhAxIxQQQiUWEFcYGREzJCobFSwdHwBmJyguHxFKIjkrIV/8QAGQEBAQEBAQEAAAAAAAAAAAAAAQACAwQF/8QAJREAAwACAwACAgEFAAAAAAAAAAERAiESMUEDYRNRwQQiMnGB/9oADAMBAAIRAxEAPwBcPVGeq1bJNeKGqUBq6muBKsVqClwa5NdiqiKqVLKK6UroIrrODQ8gODDqmWKIuNQcXFopExO1Q4lr0k/EVAxJrJDiNNQmKBhsBQ2cmq0hheJGlN4biKyUF6ZdjFaRJjL4oJiq1nYeIbmoeM2raWio+MQVZhWYHvTPxTFDqIaWKoXoaVV7a0XZBw1czUH4gogNaSIsaIlDBmi4YqY05mqBqriWq2GlArZHNVovw5qrKBRSA5a7FWzCpFKI4arRXSgzUBapUipTQCECK6j0Eg5spo4wSDQRxhQHam24c0MYWxooRi6sTUIMxTaYYoWMl6ihRzagTFNf+OTeh8Tg6VfRQW+Ia5nJp3CwRFWw8IQatFDOCzXXNP4XCzJoWPgAUuDDPDGm8ISKunC3vTXDqqmhkkVXBAE0F1mr+KcX8PLC5i5MScogaljeB6GkcHE4l2lsEfD/AFpMDvfUego4+m+D8C/DAtSeJwZBmnMHFRmYBgSphh0NExXrdhiADhAL3q2BhyKZVAwq6oFFFFo5wydaX4vCJamExIqFpoWnQgunDVdloxeKrrTSBqKONKFlo7LahkKuSasjkV1BVnS1DTI78agcRik1VkrqYVqoVB4TmmEYk0LBwoNOYOHeqijjvaKDFNYmDeaEQK0mT7B5q5VctcqMjpYMQd6I+JWej3q+JjVTxCnB7E4iwqj4g1FJ4eLsamIelZg8iYnEwbUDF4gmDXHT71ZMLanozRnhuKmicQ4oSYaqKnEIIq9FM6mJ0qYb0skqYoyAC9MIL8Y6UN2vrXAZoeKl7VQmxpntTHhXC/EdR9IMt5C/986XROWN62cFxw3DO4jOYRZ3Y3PoJn0ql0bwxrrMJ+HPF8a0WwcIZB3679fwKe/x54inDcGEwzz4jBRfRBd28tF/3UkvGHBQILu5lraFrgdZP715/wAcwjxOPkX5UCoW7J8x7y2aPStpJvfSO2WXFfYn/hjCd2bFY8sZQOp1PoP3NelfD3quFwwRFVRAAgCmk0vWM3XTzgOHBntReIQ6Uy4EWob4gNZT2NA4KUUuoMVwraaUw0lpmkBl1k0ZwALUspg0Z1MSKG0iKlTrRc82of8A5HLFLpiRUOg/ECKoXNAfFmrovWteGSMTTWGLUs+LBo2cRasEdiqjEIoTPBvQnxb0ykFxsRie1WXEiomKIiuphyKetCDzmpUzrUpKAkrhadKsMM1fAwQJquzJGQiiyIoWI5sKtFSIiJzXq7uJqmIIE0oGqZDj4oob4sihupMVdMA+1UiIo02orHlrj2tRQsgUtkLI51ohab0cYB3+WYNwI8yTbXS57RejJ4biHK+EoKg5mz3BWLRAtfeelVRtfHky/AYbkZghIkKD3YxPpc+1em4vBSEQKD8O4BgjO1ojUmDHm3ticJxsPm5mYMUgSQHOsQbQSQZ7CucTisgxHZogQJaTmcxmkb3gX2oX+R3WKxxM3/ETBcYhIfG1sZXDJ1ZjoWGwE9SZsc/gMEIIGu5603g4KqIUATfz7nrVWQ5qeVURwyyeQVmJFVLmiJVHEm1HejJFxNqq6HXahthkU2xGQChqMV0DTEm1Vw7PFdTDvI0o2ENSagAM/ORRg0eVLqOYmjOwFzRB8AcQkCaBwzEzNaBAYVOG4Vbza1u9axXhAUwIE1xUJNGZhEV1Hjzo3CKPw9pofD4ZiaYR7R1oWG5URWdkD4lL9qouGDemWuL1Qr0rSYFVwr0cnKIrmEwzUHisUhoihKsUdydqlU+K/SpTGAQEkXquGQJmq5++1qpiLGUE3q7Aujc3au4huKthkadKA7y3lr5VIhjiVBjtQggiY71wIXOYGANqJhvylYvB99aeigNMS80ygMmDrSKG8HoLdKaw8qzvOlZyvhFcWS1hNavh/Cs+VbX+UEwdJkRf++oX4Lh8z3ECJMnbvXouExFwmDubC9osvafWq9Hb4sLtmV4tiPw7ouDhfEeEzPiKzjmY5gnMoGUCTGYksB3rebxNwmGHTI7AFwv0g6CCJGx7elLDGLYztnbIWWIkSCBYKu+utPpgrnnQ7k3MaaWm+9Svh6Gl6ZTcCossxLPaASTB1jrv515bxTi1d8inkDy3zGWiwYtuL22n29dxmNzQCCoNyAVB9NL3rxr4apjjKko6kkSRlfM0+4/FaWthkqoGcEMCBamRh5mipmGYyYFtBYWFh060DE4kAE9D2m1C30cX8OSLspBg7UNXvVH8RDdz2G48tutdwExWHygSYUdN7m21M/Zn8bG3QG8Wiq4iTeqBDfnYKsTAG/Q6N0FceA2UOdNZJUCwzHYSe0VQfxsK0KBuN6CZg99BSvx3AaDmUGIjpfX9rUfA8QGVSRpv51PHJGXgw5wTvYxUyZjFN8bjYLt/8RbKFE54zZt7DQVnjGvP3rKdVMtRw6AQaZSc1gaApkH80TD4hgMt9NelTolhhgywpZRzR1oiYigEVZCAVkxpWa0AIi+WhYpIsNausB2La/T5zUTBLOx0gTNKbXZHX2Wdr1OEWRf3pdJVwTcnWjFSFKg77VpkU4niMs5daiSRJF+tQrKzAA6ntXHxpi9tKf8ARUH8Q1KKqJ3qUckEOhIBB2i/SrDDkZmuZirYuAcn9uNaJhYoKkEQQcwGvnfzqbgFMRMhEiQRHqZrmJhnIGC81569B+PvV3xLCdbW7rR8Q5TmJ5YsN5vY/e/lWLCEcN4w5i+hHkYufeuuZUG4v+NKC+Kqo+WWzEC2xJmaO+JdRNjf0sYPqa0SYPDy5SzWJM/sAKumGsSLnQ9j0oTLJN9BIHb+3ooe5Ci4mYvc7DvWmRteEvm5NWa7R0WN/X70TiXgwQIiDN9CBMEGYk/brWN4VxowzaSbrcQWH9FNcRxbOwYFCsaRJIBKkBtNp0rDxp6Pi+XHHGM1MEhvleQJB1BkWBHURp6VpYLBEUi4gDbsbTrvtXn+D8RcuAoVZHLE6zbUxpJrRd2AnVj18wLdJoyy49How/vVAcRxIgqgMQcov8pBsUiQZMe1ZGJwpXKxk5iuYxodwO+W+/2rRw3YaHmknN1JvHnNvWmuA4fOZaygTAkqSIHuQ1SyeRp4rEzV8OIWGaMpPk0TlntBHtSC8IAQG6TMQI/qiD2r1vE4YC3EmI2N/lBI9772pRsMQF0E3tzaTY7iluBKebCJscrSTDWBPS29h960U4EsuWQQ3M1xJBmCOtj20rRxcJfkCzNhMEaSbiNqLwoAF0A3AFpI0A/PWh5BxMN8NQ7oxtGaBnkE3IgbgDv/AAPi+DBVTIVoBQAzHNBEWkaGPPpW5iQJmSbmYJHYft29LJYzBsvKZUiSvyqZ1C6k2OvetLIy8RDEwPhwIBAJJhZKydyJkSJ/kVXicBBbKIgQOUb7DufaK0MZQ2VUCs1pM7TJgDm1J/tq4E1Zxlm0FcoBDSDBmT+B9trIGjzHFIVkqTbufaT3pvD4kOvPyycuvv5ExpWnxShlaTmUlgIAi/fb2rznE4R5lynNqNcvpHmDNa1kcssTeYHKT7DoKCjkdx11mlOD8RhchPMoMTv2PcT60xgkDl0kAnzrEmmcWodCqZ769KKuH8om1z7UMxpHSR+81bEfKUA+a59KzQK57tmUxqD5aUfCc5dbt9hVscqykKZjUjftSZxJWIgggR2NHYncU3t5CqYiEEnNBoj2HRomfPahY75mUaWmdj2NahF8VOVenTvQyqwDoRVmcNCzDyfKO1WKXjvepAWwCcoqUlivcx+KlWy2aOJiiSJm+06RNqDhMZ2OWZ/BoD4jEAgatCiYhREnzmNfKrnqvloYmQpHrb1qa9APjLJOpIABGl9r996vicULEAFYFhs386/ihcFjF8vKTy6xEtcGY6XmpiFC5WAwMggWkzcgUPGPZMHhEZQyiVsI6jQW66fajYrIqLJsOWSJZRESfKQa7i8OcNQUO5zGwCgRA8/4oTYwzhoJEnMRcWAERp9X5oa/ZSAlZvimYhRDX1ECDbUfKP8AdRk5BKzck9xMyaFlKJiSASiqgO5XPv5gRV+HcFAYhzzMJ+mw9LD700ihwyGJGhEr1HLf2j71YYkJhXN1i46ljJ6HW1ETACyGYsCkoTfWBEjyjrSLpEl5MHMLzNuUiNRcDpeqka2DxAR1II5TzbERGnnp6V6HiO2kT5jQfkV4nh8bnGe8A2mTJ0g97jsTXtfDuIBQ9VsewAm58qzmqj1f02cbRbhsDmDHnmxGg2IAFo1/F6fw0yoFAi86C0b0DGxBBI2vP985plMUGDa427xXLHJo9eSTEy5PL1gzoVAiQJ0/k0niPIEFrE6mSY10GnvTvF4R1Qi87af2KTQS+Vp+XNEwQdCJ2sb1q3szIMcOqlQbzYww2giTOll+wqmQsmGwIiL/AG95/u9ELkkgWBkG3mR5xMeZpvC4YsMsfNHkANh6R96MVsW9C64ErmcGLBR/pkmDrQWw8ysSBOaU2kAA82s/81t8XhjYcoEegEwPv71kY7ZjAktv6mP2P9FdMnNIwldmbxLwQGUExI5QIvFjEjSwoePih1RirJE7SZc9M1tImN+8UfjgxKwSGBIDa66gz0E+1JqrqCFYdCdcwN/ly3848qlkDRXC4ImU5QGF8pDnNf5jsJ6CAaHicNYEgSIAgExmNzY31E22prhMVEgEKrQCxjLO66iJvHrpUdkQSAbzFohcwtMAkT67VusxDyvinBFfk1E6ESIYCf8A10o/h/GB7mJmGEaWsa2+JCvPvbXpfrBvGnevJI3w8XI0hWYl73AuZHpW5yRy+TE9Hj4qQoJK3sfPY0nxLlfmN9p2n8i1EDq5GwO3QAwsH70Fml73iw/cH0IrKRyodWYIehG0VTCxyWzgSRPkI376VGxCBF4At1J0HpP4qcQRErFonoetEA7h4hgXksJoRxRAESSd9AKOcK8zaJJ2j+7VWFChz9Q9p3qFFEaYBFwdfL9qqMYBjJM6wO9E4Vg5YrPNyiex1oHF4BgmxObr0Gk1Y9wDW4UoEWQJjpUrAxC06jbTyqVrgJr8KqlgCpK3MxcDeNOb12HWuOBmtcF1A9w09pWbeVdwAo0EsQCVN4BUIT5yBpsKpiAM75CFX5hFhJGsDblMDb1rLZgZXHtlBlROYgEEiZgEafvQHBAZ9xMHaSOXa7WbTsao7kNiBARIuOsQDboCR7mrY+BOHlmV5TEi8sADOkw02HXpWaQPExwiKTzAqFYZrTImfKWqIDA0CnciZDQxPbQD1qnD4YCZCCoILbapDzOl8pF+poiv9EZd5GsEmAvXp6ey0CGcDBzo+lylt8qbWOsk38qUfOVJAg5d7HmvJncZfuRRmd0CKBnJCqXEkC4zNG17eoruJikurkWIysJg3377e9CvYi2c/DXNIdYBAsSBuJ0/5mqpmM/KZkQNgcxAE9D+29GIygOGzEswE7wrBrTEc3/qaG7orEjSd5m4zC+l4j39F/RHFtkUQX1zGYUZjIX2UehvWi2OUUhRC5J3k5hlP5FZvDFA6yrGVewM8q/JMXE37Qo6xR8V85VJielhlyEQCN4/aq7JZTaPV47g3idFEaRI0HnFK4SmSqEiNDYaTJg+nvWZheJWCTJkazIAYG9tLG9OpxQLqGcWldoi2nUyP/U1yywfh9DD5sckPHinBClfXfa/l/NMNgwFiAS0zrboKQ8R4sKEJEBXUeZZspHlf1rV4fFRmIBmAIO0mRPtHtWVizpyxFsPCIKiT0Hc3u3vPpXo+GwYEWm0HoP7+ay8Phz8VQs7GdPP7E1v4y9PK1dfjxaTbOWeXiM/iyBYbfzWM7spkQJ69/6a38Lgs92MdPuP3pbiPDVmDMxM971ccstmllitGOUWDkCyYm8iwH2NZ/GIASWsPlgEZoB1UeprX/8ACKki141v1E0DieBJbNmkxIsBp0j+3qWLJtHnvEOBgMqkM19eUkCZnYnvQ8RHPOWWMogncAxpoL7d60/EvDydQc0fNN9e3nVcPAAMAGL2Ak+nW5+1bTMQyvEMN0GRYJPMZmZNyB0AvG9ed/xGmj2zWnWTbr2IP36V67jxlRmBZYBbKNTEWv8A6fcmvD8fxAcyZggSx6Ta3nXTC055mj4bxJdVmdAAf+v7rWm6QLQSsjt6es+1edTiymGuUmRbQRqTbrTvBcTkADQwzIWJ9C1zrEgelTxdp52aD4mYXgEDUmTbsNrVMEyXNsoHpI/7pTHZsqsmoPL15jK6eYplcuWItJkaSBIERpoKzkoQVMSQVUbad9PedKHhgZVSbxHY2n8CKPwwCnMVOYBgBEHSJv5i/lS2FiCZW85v9u2v9EUDBvhyt7QBa/cxP5oOMVbDsLMSQZ2MZdtdfaqZuRZOvp3n/wDVqjlTAEcsEZelif8Ara9EV0VFfhFbXMVK1J8/YCpTci/4LLjZMSSeVuWAb3Maf7j9zQjgGQpaVEgHTNkYED1VmsRaDRPhjFWCk82UkEg8sARy62F+9H4TiIYhwVQoT+oAyNx9JtfW01KnNIXKS+VSSyl5NxMmwt2Ye9MJihpU2MrlnupOvaQPXvXMEBsjhvkm8QGBDKpAP+dg0nXKOtWfEsqKRny3FhzAkHUdxYayOlZbjggOMxMmKtiRFuhsYFtyZMVCWAQ92EkTymVg7C4U95NcfiYMHYa9I3zHVoYGe5iqurgqZE5RmQMABABgSRe6n1NtRStkNcNxCtYMOT5iNu8dwI8ooOHlyllG7dSLMJ10Aj0k/pruMQtzIBQZTdb65T0a5t/AomJinQxm6RYA/MWO8+f7UIgODjBlRcsBIY7REB2Em0lmka+tc4oQxkW3J+nLEkncS/vPWr/FKO7GeYEtMZgDYGCNTOUihKgdGnfIP8ph1IEfpgnvvQstkUZArZ5gsuVYNgo1959IpkopdWW+UjTVRE5es80++k0A4YnKwMguBOtgBB2AIg+hqDjVTDXFA+Z2GkZcquW5RrroardIi/GIqu5OyA6G5YXM9Jc//YdBVFx1dhk5uUmZGaQTzjvIiP8AMvelsbELi8mwZyZ5RuPsdTBgRcVXw18yMcuQFTksBYTcAakc572pSaWxThpeJeJBsNMNoY4eIDeVJcCEEd502hqf8G48BsNRrkRj0IOEVHb6gfWvO4/DS+bIzujFzDQpPM65gdlAOmtusU6mKqBIH6ZChgbAhlA+kAhtferJJw6rNpnuuC8X5juByztOcLHsRW9wnE53JNlFkHW/O/qeUdhP1V8kwsUnlzkTJgWEkgiJ35R/Br0HA/4mLKkTnKlQLGGLqumhiPK/atpxDzTZ9GZirdtP3qmO5s3SLe1YfB+LvJQJnEBgRiKSdVYnPl3HuD1rnEeIB1zg2W4HUKQGIG9xE6QTEzTYbWx/HNi0z18oGnaZNLQfbftWPw3iZOZWEGAAPMkz7SfQda1DjSQNMpltpmMq+ov6EUdmrCmOguTpr7D++1LvlUQto3+/9PanMVZEjT2sBEn3rM4h2ggKBBG8gmYv01qeJcjE8YRnhE1MEE6QTufUfevL8Z4Y+f4WHzjYj9MG5PWVPua9jxRZbkySpsPe194infBfDROYjUmD2kwPK9dMdGMtnlG/wqAqhmOUAlom7dBF4FvW0gXrz3i2OA4RAEVTl6kQbkgWHlc19J8dxVVGgTtA39f5r5h4i+GWJQZRed2HfWD6R611RxyRVOOYAZmJiY7GbH0vTGL4nrlDAiIFgARAkrFtNJNZrYUCSQBsb38hr9qXVyDIMEUREnD0v/8ARZ1hmWY1grB6dIt6Uxw3GrlINhJka30EnSLd9a8/w/HWuTMAACIOxme0+9dfFNmaxYSL7SRbpoazwpU1vEPFQTYHWZMXb2EDtG9W4JnDjPoYYDs289v3FY6cQxDTGgJkToQBHuKdGMJDESBrEmCeYG/n9jRxSUJMb+BjNdQpB0ljPrUrP/8AKXqvuf4rtPFienCSQAxBPMDOZpjNEaaT/NREA5jLAMoJEKILANIO0nTS8DeqYLXOU3WQTcmbiGE3maYVwFIEQRN51zA5hPf7GvPkzmL4uGJOUkMYWF2CjUrYEkj71OcMWEMxYgTCgCY/BBMRqaHxLc5CDNIk7G0a20g/c+pUw4QhmJllCn6gTqB2lRFD6Iti8MWUhlAB0YEEzEAET+kRtoKq/FTld8slSjnuLAkadDBEiT1rnFuoC2FnGa0CbAk9hYiihUCgEAZWDHUTDllmN9R3ne1GgojwiOU5jlghgAZAyy0ERBIjU7kCjeJ4VkcNYOWXLrl0YQbRMGNLdTNXwsUNGzCWbrLWmPID2NcGIrI4UkSIJAAKsASxAMST+emtbadpIEMJSwQNe/KeUnkMASMvURP6a5kZDyqQwhRIMyYksNtN426ijJwKDnkOSCRcWzct/wBAEmZ79Zrqu0EsQSPPL0Reu49NK5zYncNjjYqPATkaVaZkTeImyi9L8bxQCKsQACsEEEtZSI/VJj07GnXxAi/FdmMAgAalgMoA7mYvas/iMVHzCDqMlo5ZQSZEBjmkD8U493whbiFLsVzZVLLnzMAxGaTYSB8q6kDzo/A4iEFACAZUZSVAEWBJ3sY1FqomDBAHOwIYmIFzYXNlAU6fp7mecB4cWcNYXBCmbS9y1iLdAfpNr10caFDaNOexUzzAuwJynLYgDeNNz3pcH/4ixbK3yZjcSd4OwJAJ897U8+Az4rAydlAAIhrZSNwQZnyNG43hQQwBytALAbhpGa0QZnT+aynVoY5TOCujA53IILQGIXKZFwLTJUkxcRqbh7hgWCyWWHJnDGVsoCsQWGo1E9PSgYXDFmy5jIBtCnlkbMIn/jpRFRVRwEIK2JkyVBzZSJvf333FVoIabxArkGdSWQoWGZRkLZ8y6wCLT9N9Yg+m8HwlYMoYEqnJsQUBJBHQiRbbvp4ZEKISynKoGUEElDbMDAgEr0H0imcbxNsBExEkMCc/MSGDRqCTGYMZG0mpWnRZTs1ZdccuJIb5N5XIAw6zMn361ocHxwZXctezDYk5SBbpEGsFOM0YgSi7nNIVSOXLNrG/52YzMQSZk5ibAgkLaCNTpbresPJonns3eH44sG6CIGk7Geg0A6wOoFAxlK8zW/ULeg17fc153H4w4Ys/LpkI+ViurGDLawDYa6kUHH8VZXdnlgoJLySzRaApPLe9h611x3sVkejw8HO4cwNhm0Atdv4vWnxPGugIAWyhrWzKd7bivKJ4u7hSo+kkKbATEMxJ6QbX19IvEYhZXLADKQBBgjmgGb2n1I6VN/onkgX+IfEQvNnW8wCIY9csmLSN/qFeTxscvDQJYNkYgM+ZYYCYiOaBrFeg47gFxGzFZUEZlLFTlIMMrDRl02BAIOgNC4nwxBhBULECCD9QEtcnqeo7VtZpJIw8jHOEDiIMQcvw0DQJYswLcs/VeehiN6YPgYV0QsuIzc4KnlbCMqrbQSTmg6ZSNbHZ4nhizoIlQUZQTBUqixHrA/3H0DhYDM7Mea4ImxQkZcqwRmAXQCwsbGnn+i8PMPwvzt9KwJ72AHnv5UXxHhCuQQbIzG0wASZPSCY9q9I3AIRDbw7kaMRF/XKLdzGtX4tFxDDTnEsR1IBlSTt5aW6VflQI87wGFmwysEs5QLoNXZYBJA1XSaaxkKYmRgMiogYNodQL6gzJBF9a2MPhlASFUMpTliFlXDErG0n8azTPFAMRiZQTY5YzMdfhzI5DMCNde9HPs0lUeZxTgqSCcpGzDELDzKmD6VK9Jh4CQM85ovdPT6ekVKeYcSv1FFMfEKupFxe2m1wfer4IDNJMcrDKdjoAao2G5R3QAMklNhAIYjW2496GPiFnMAZrztJBGbTWb+1eeGCrxLEXIUdCdACRAuPxGtXwsMEs8nlIMEabAW2Ek+9LcRw2XLeBk5WuGzGzAjuM1jpmq/DuwIsYYiekZrnyudPOp7CF+MKAMQMzubgkgL9St2u3rNN4iAwCJC3Pmug8zf2pRbZy4nK0reRlBmCR5j2rvBsSrAghVcAE2kn5mPWT6Wip1C0dRk+FnBzGcpS2VSDDDS8wdZomJlUBuUZlaFBiI5c8xYQGiR0pDisQqgNy5kkKRoMwzCdP+qtxSFVww0tO03CqAEVjqesdxXSLskjRw+GUwEYgKJETIm5UTv3pfFUjmzwk2NoJ9b6W9KmDxSpiFV5jLSQLEkZQR2A/eiY+E2IXUDMFYQPlCwQwvud42EeVYu9joHgOWRXGVkUsZmzFSLsBqCZ3gxpV1hs7xAJlVnZngDX9J33MbUtwbBVdFmRMBvl5zKnzBBHrTHDIXyhMt9mEXzkkf8HWl9gThhkZiNAVkAXE2sNBe3vRwoQNlAZiAFIlSfmPkDzbnU0RMMhXDrzMGnoVmRcaHS1BxyGVSDBk2B5WtObubis6pemn4iiD4eKgAZVh2iCHURraTlNzuD5VlnjjGViksASVkqcrhYE3GswdLijNjZ8ISTOmsWIIuN46+VKrkZQrIeYZSTPL1uf9FK12PJrRfEIZ2Kz8pJgwQy2XNGx5rHW3ai/DObkgqQjKCbN8kggdcrA1n42KbIAsZhI8tzuWBWKYwi+YWPzbnQEMSe94oa0BbxVEd2CNzkTMc0MGgEiJIgWOgRZ1oWNgDIcwBVlm5gSGtJF9CDbpVuORQ5fUGzASACCM5tuABG165hY65ASLggt57qR029e1aWkjVDYfEZIJT5UykkHQKQxAm/Lb0pjhHLM6MJWCsvuM6DMB1NzGumtZuC+VuaYmZuxAaGtFisRtv3insTEuTY3JBFyQZExuSL1l4pumaDfCBa0wcmaIMSVLa2AOUj071bhsqEAhc02BJIUEFQJP1ET/AE0zwb2YKtrXGsEC+nUiekiszC4Y52zfIoERuy8zt3aVHuNa39Ch8qjsTpFjbKV0HSL/AN1uB2OYpzAyCCCQYgknSGlreRquMggKAALkhtZgx/tH8UwgyKufyE941GoE7VmRkUxEsXDGUkOu8EDlB66NHSRrSLO4ZnvAXKBA+Um7TOxERtINNcNiOjLlIIkEm14+UGNwIXrAqyAMTlMrEZdbN1MabT2Bpj6AmOOdXEkNhqSCAdAmgi5PrcV12DAu6neIkEfIB5RkNDxw6gsGkcsDQDXNt9X5JqzYhWysLyPU/Iwj1FEolkKsZnKwAAWN7xJ0IuLfxRcDDAzEgFspUHpIgg6HcD0pOYAdxmHyuVg9mUjXST5Gr5iuohR/m2k6Wsf4FMhBsHCRyBlyPcr1YnQROutvKhw4VcuVTbMxEykkkiP1AG/b1BOHQgu6kllWbiRmGWDY8ptMD+au2LmtoSZm5AAm2bWYYHtI70ctxDdCOI7g8qCLRp08qlNBVbmIxLk6ERrtNSq/Q0GmI5JEgXuO2p9ZFUx8QgKTeAWgWmP+BFSpUuzB3xBwGAPRGHW6AGT7e1LJjksTAnQW6a7+oqVKl0QdsMZJMAm5tqNBcdLUlwOCzuQbmSNYXLmgAj0+9SpTh0yDYmCApgcrkW1JhpAJPS/vTD4iZhmkkLta8G3qTrtB612pUJz4YLu+VRJbLAgASSoO53+1Hx0xROSAGkxYQRBN9Ygd9KlSseocVsRVyS5UzzPIM8y6GP0sDMGicFkZHF5UiTAm4AB/FtKlStfsyNYGE+RizS30kdd5J8qXwMbmcO1kltLyMxItb9r61Klc6+TJllwWIYSGCG86zmFwfSPTpVuLAIZsxEdRew7Wm5FcqVp/yRMbCWfi5uUjNYXE62j/AFD1pvgSSjOQoVSoXUtzDc9bfftUqU+CZuGpJIJMGSTbQc0+si1cx8BsrGcpXK3WQTA/E1KlOPYHeDwARDn6SQI1M2FrCnMHiACcqlQJAvJynQGfM1KlTJHMFyrZ4IIBJgwCIUZbbXHtTmJghkYro09iJEt63FSpWH2KE2EOhN8ie5EgEmZ/O1c4lpDGL5jvYgcx/EVKlb9ItAw8ggfM0kbs2hPpOlUxEcZl5YJ1v8ug03BI+9dqUXaAV4jGygqQGMcvYH5gZsZj71VOLYFVywADedZi0X369+tdqVvFUQ5MwFsoOa+9tD6LVMEHGXObqM4YdCozLH49e1SpR4SKtxLKMouSNBYNl5/QEgi9MYeCSEPysRBGoBIBP7e1SpUkBGbDBPIuvSdb1KlSs0j/2Q=="
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Ceibo",
-            "scientificName": "Erythrina crista-galli",
-            "createdAt": "2024-01-17T14:48:00.000Z",
-            "status": "new",
-            "latitude": 34.47179,
-            "longitude": 58.2633,
-            "type": {
-                "id": 6,
-                "name": "arboles",
-                "category": "fauna"
-            },
-            "createdBy": {
-                "id": 1,
-                "name": "Francisco Armendariz",
-                "username": "Fran"
-            },
-            "approvedBy": {
-                "id": 2,
-                "name": "Franco Ponce",
-                "username": "Fran"
-            },
-            "images": [
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Erythrina_crista-galli_09_ies.jpg/500px-Erythrina_crista-galli_09_ies.jpg"
-                },
-                {
-                    "id": 1,
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Ceibo_en_Mar_del_Plata.JPG/440px-Ceibo_en_Mar_del_Plata.JPG"
-                }
-            ],
-            "fields": [
-                {
-                    "id": 1,
-                    "title": "Características físicas",
-                    "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
-                },
-                {
-                    "id": 2,
-                    "title": "Hábitat",
-                    "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
-                }
-            ]
+  "sightings": [
+    {
+      "id": 1,
+      "name": "Pájaro carpintero real",
+      "scientificName": "Colaptes melanochloros",
+      "createdAt": "2024-01-17T14:48:00.000Z",
+      "status": "new",
+      "latitude": 34.47179,
+      "longitude": 58.2633,
+      "type": {
+        "name": "aves",
+        "category": "fauna",
+        "active": true
+      },
+      "createdBy": {
+        "id": 1,
+        "name": "Francisco Armendariz",
+        "username": "Fran",
+        "email": "mail",
+        "active": true,
+        "role": {
+          "id": 1,
+          "name": "admin"
         }
-    ]
+      },
+      "approvedBy": {
+        "id": 2,
+        "name": "Franco Ponce",
+        "username": "Fran"
+      },
+      "images": [
+        {
+          "id": 1,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Colaptes_melanochloros_-Bataguassu%2C_Mato_Grosso_do_Sul%2C_Brazil-8.jpg/500px-Colaptes_melanochloros_-Bataguassu%2C_Mato_Grosso_do_Sul%2C_Brazil-8.jpg"
+        },
+        {
+          "id": 1,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Green-barred_woodpecker_-_Lip_Kee.jpg/440px-Green-barred_woodpecker_-_Lip_Kee.jpg"
+        }
+      ],
+      "fields": [
+        {
+          "id": 1,
+          "title": "Características físicas",
+          "description": "El pico es fuerte y cónico, terminado en punta como de cincel o de tijera. Para beber agua, llenan de esa sustancia su pico y luego mueven la cabeza hacia atrás con el fin de que el agua pase por su garganta. Su plumaje es duro, poco abundante y rígido. A esta especie se la suele llamar también carpintero de nuca roja debido a la mancha carmín que tienen machos y hembras."
+        },
+        {
+          "id": 2,
+          "title": "Hábitat",
+          "description": "Esta especie habita en el centro y centro-sur de América del Sur, en Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En la Argentina, mora en las provincias del norte, el litoral y en algunas partes de las provincias de Neuquén y Río Negro. Su hábitat natural son los bosques secos subtropicales o tropicales y los bosques húmedos subtropicales o tropicales de tierras bajas, aunque también está adaptado para vivir en parques urbanos. Se avistaron ejemplares hasta en Puerto Rosales, al sur de la provincia de Buenos Aires."
+        }
+      ]
+    }
+  ]
 }

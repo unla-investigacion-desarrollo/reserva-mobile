@@ -1,6 +1,6 @@
 import { PixelRatio } from 'react-native';
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../constants/platform';
 
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../constants/platform';
 
 const [shortDimension, longDimension] =
   WINDOW_WIDTH < WINDOW_HEIGHT ? [WINDOW_WIDTH, WINDOW_HEIGHT] : [WINDOW_HEIGHT, WINDOW_WIDTH];

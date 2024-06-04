@@ -48,6 +48,8 @@ export default () => {
         favicon: './src/assets/appIcons/favicon.png'
       },
       plugins: [
+        'expo-localization',
+        'expo-router',
         '@react-native-firebase/app',
         [
           'expo-build-properties',

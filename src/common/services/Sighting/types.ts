@@ -1,5 +1,7 @@
 import { Sighting, SightingType } from '#/common/types/stightings';
 
+import { Pagination } from '../types';
+
 export type GetSightingsParams = {
   status?: string;
   type?: string;
@@ -9,12 +11,6 @@ export type GetSightingsParams = {
   sortBy?: string;
 };
 
-export type GetSightingsResponse = Sighting[];
+export type GetSightingsResponse = Pagination<Sighting>;
 
-export type GetSightingsError = {
-  time: string;
-  result: string;
-  from: string;
-};
-
-export type GetSightingTypesResponse = SightingType[];
+export type GetSightingTypesResponse = Pagination<SightingType>;

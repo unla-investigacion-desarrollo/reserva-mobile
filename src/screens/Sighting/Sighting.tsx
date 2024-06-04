@@ -12,12 +12,11 @@ import { SightingHeader } from './SightingHeader';
 import { FIELD_GAP, styles } from './styles';
 
 export type SightingProps = {
-  sightingId: number;
+  sightingId: string;
 };
 
 export function Sighting({ sightingId }: SightingProps) {
-
-  const sighting: SightingType = testData.sightings[0]
+  const sighting: SightingType = testData.sightings[0];
 
   const { top } = useSafeAreaInsets();
   return (

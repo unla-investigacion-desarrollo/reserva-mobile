@@ -3,17 +3,19 @@ import { useRef, useState } from 'react';
 import { View } from 'react-native';
 
 import { Image, ImageStyle } from 'expo-image';
+import { router } from 'expo-router';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 
-import { primary } from '#/common/constants/colors';
+import { ArrowLeftIcon } from '#/assets';
+import { primary, transparent, white } from '#/common/constants/colors';
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '#/common/constants/platform';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { lastItem } from '#/common/utils/array';
-import { Text } from '#/components';
+import { Button, Text } from '#/components';
 
-import { ICON_SIZE, styles } from './styles';
+import { BACK_ICON_SIZE, CATEGORY_ICON_SIZE, styles } from './styles';
 
 export type SightingHeaderProps = {
   sighting: Sighting;
@@ -40,13 +42,23 @@ export function SightingHeader({ sighting }: SightingHeaderProps) {
             return <View key={`dot-${index}`} style={styles.dot(index === currentImageIndex)} />;
           })}
         </View>
+        <Button
+          Svg={ArrowLeftIcon}
+          iconSize={BACK_ICON_SIZE}
+          iconStroke={white}
+          iconFill={transparent}
+          title="Core.goBack"
+          textStyle={styles.backButtonText}
+          style={styles.backButton}
+          onPress={() => router.back()}
+        />
       </View>
       <View style={styles.headerInfo}>
         <Text style={styles.name}>{sighting.name}</Text>
         <Text style={styles.scientificName}>{sighting.scientificName}</Text>
         <View style={styles.typeRow}>
           <View style={styles.tag}>
-            <Icon width={ICON_SIZE} height={ICON_SIZE} fill={primary.default} />
+            <Icon width={CATEGORY_ICON_SIZE} height={CATEGORY_ICON_SIZE} fill={primary.default} />
             <Text style={styles.type}>{sighting.type.category}</Text>
           </View>
           <Text style={[styles.type, styles.tag]}>{sighting.type.name}</Text>

@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { black, white } from '#/common/constants/colors';
 import { MEDIUM_WEIGHT, REGULAR_WEIGHT, SIZES } from '#/common/constants/fonts';
+import { colorWithOpacity } from '#/common/utils/color';
 import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
 import { ABSOLUTE } from '#/styles/positions';
@@ -23,6 +24,7 @@ export const styles = StyleSheet.create({
     width: FULL_SIZE
   },
   content: {
+    backgroundColor: colorWithOpacity(black, 25),
     borderRadius: 8,
     gap: verticalScale(8),
     paddingHorizontal: scale(20),
