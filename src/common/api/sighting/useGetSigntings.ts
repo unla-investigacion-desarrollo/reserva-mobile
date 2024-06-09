@@ -4,7 +4,7 @@ import { getSightings } from '#/common/services/Sighting';
 import { GetSightingsParams, GetSightingsResponse } from '#/common/services/Sighting/types';
 import { ErrorResponse } from '#/common/services/types';
 
-export const useGetSighting = createQuery<
+export const useGetSightings = createQuery<
   GetSightingsResponse | undefined,
   GetSightingsParams,
   ErrorResponse

@@ -11,3 +11,4 @@ export * from './SightingCard';
 export * from './SearchBar';
 export * from './VisitUsCard';
 export * from './SightingTag';
+export * from './Image';

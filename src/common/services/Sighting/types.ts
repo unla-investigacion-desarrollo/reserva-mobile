@@ -13,4 +13,8 @@ export type GetSightingsParams = {
 
 export type GetSightingsResponse = Pagination<Sighting>;
 
+export type GetSightingByIdParams = { id: string };
+
+export type GetSightingByIdResponse = Sighting;
+
 export type GetSightingTypesResponse = Pagination<SightingType>;

@@ -6,7 +6,7 @@ import { FlatList, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import { SearchIcon } from '#/assets';
-import { useGetSighting, useGetTypes } from '#/common/api';
+import { useGetSightings, useGetTypes } from '#/common/api';
 import { BUTTON_INTENTS } from '#/common/constants/button';
 import { neutral, primary } from '#/common/constants/colors';
 import { filterSightings } from '#/common/models/sightings';
@@ -28,17 +28,17 @@ export function Home() {
   const [sightings, setSightings] = useState<Sighting[]>([]);
 
   const {
-    data: sightingData,
+    data: sightingsDataPage,
     isSuccess,
     isFetching
-  } = useGetSighting({ variables: { page, size: 4 }, queryHash: '' });
+  } = useGetSightings({ variables: { page, size: 4 }, queryHash: '' });
   const { data: sightingTypesData } = useGetTypes();
 
   useEffect(() => {
-    if (isSuccess && sightingData && sightingData.data && !isEmpty(sightingData.data)) {
-      setSightings([...sightings, ...sightingData.data]);
+    if (isSuccess && sightingsDataPage && sightingsDataPage.data && !isEmpty(sightingsDataPage.data)) {
+      setSightings([...sightings, ...sightingsDataPage.data]);
     }
-  }, [sightingData]);
+  }, [sightingsDataPage]);
 
   const sightingTypes = sightingTypesData?.data ?? [];
   const [selectedType, setSelectedType] = useState<SightingType | null>(null);

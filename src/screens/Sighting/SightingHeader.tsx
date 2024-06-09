@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { View } from 'react-native';
 
-import { Image, ImageStyle } from 'expo-image';
+import { ImageStyle } from 'expo-image';
 import { router } from 'expo-router';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
@@ -13,7 +13,7 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '#/common/constants/platform';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { lastItem } from '#/common/utils/array';
-import { Button, Text } from '#/components';
+import { Button, Image, Text } from '#/components';
 
 import { BACK_ICON_SIZE, CATEGORY_ICON_SIZE, styles } from './styles';
 

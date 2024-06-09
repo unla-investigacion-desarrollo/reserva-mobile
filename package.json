@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
-    "start": "npx expo start",
+    "start.dev": "NODE_ENV=development npx expo start",
+    "start.prod": "NODE_ENV=production npx expo start",
     "build": "npx expo prebuild",
     "build-clean": "npx expo prebuild --clean",
     "android.dev": "NODE_ENV=development npx expo run:android",

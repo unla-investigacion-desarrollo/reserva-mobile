@@ -1,16 +1,16 @@
 import { Pressable, View, ViewStyle } from 'react-native';
 
-import { Image, ImageStyle } from 'expo-image';
+import { ImageStyle } from 'expo-image';
 import { Link } from 'expo-router';
 
 import { black, neutral } from '#/common/constants/colors';
 import { ROUTE_LINKS } from '#/common/constants/routes';
 import { CATEGORIES } from '#/common/constants/sightings';
-import { buildImageUrl } from '#/common/models/images';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { shadowStyles } from '#/styles/shadows';
 
+import { Image } from '../Image';
 import { Text } from '../Text';
 import { ICON_SIZE, styles } from './styles';
 
@@ -30,7 +30,7 @@ export function SightingCard({ sighting, style }: SightingCardProps) {
       asChild
       style={[styles.sightingCard, shadowStyles.baseShadow(black), style]}>
       <Pressable>
-        <Image source={buildImageUrl(sighting.images[0])} style={styles.image as ImageStyle} />
+        <Image source={sighting.images[0].url} style={styles.image as ImageStyle} />
         <View style={styles.body}>
           <Text numberOfLines={1} style={styles.name}>
             {sighting.name}

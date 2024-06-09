@@ -1,9 +1,10 @@
 import { View } from 'react-native';
 
-import { Image, ImageStyle } from 'expo-image';
+import { ImageStyle } from 'expo-image';
 
 import { Sighting } from '#/common/types/stightings';
 
+import { Image } from '../Image';
 import { Text } from '../Text';
 import { styles } from './styles';
 
