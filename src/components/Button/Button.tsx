@@ -31,10 +31,12 @@ export interface ButtonProps extends PressableProps {
   icon?: ImageSourcePropType;
   title?: TxOrString;
   iconSize?: number;
-  iconColor?: ColorValue;
-  iconWidth?: number;
+  iconStroke?: ColorValue;
+  iconFill?: ColorValue;
+  iconStrokeWidth?: number;
   Svg?: SvgComponent;
   intent?: ButtonIntents;
+  active?: boolean;
 }
 
 export function Button({
@@ -47,11 +49,13 @@ export function Button({
   textStyle,
   icon,
   iconSize,
-  iconColor,
-  iconWidth,
+  iconFill,
+  iconStroke,
+  iconStrokeWidth,
   Svg,
   children,
-  intent
+  intent,
+  active
 }: ButtonProps) {
   const InnerContainer = innerStyle ? View : Fragment;
 
@@ -71,7 +75,7 @@ export function Button({
         intentStyles?.ENABLED?.CONTAINER,
         styles.container,
         style,
-        pressed && { ...pressedStyles },
+        (pressed || active) && { ...pressedStyles },
         (disabled || loading) && { ...disabledStyles }
       ]}
       disabled={disabled}>
@@ -86,9 +90,9 @@ export function Button({
                 <Svg
                   width={iconSize}
                   height={iconSize}
-                  strokeWidth={iconWidth}
-                  fill={iconColor}
-                  stroke={iconColor}
+                  strokeWidth={iconStrokeWidth}
+                  fill={iconFill}
+                  stroke={iconStroke}
                 />
               )}
             </>
@@ -100,7 +104,7 @@ export function Button({
               style={[
                 intentStyles?.ENABLED?.TEXT,
                 textStyle,
-                isPressed && intentStyles?.PRESSED?.TEXT,
+                (isPressed || active) && intentStyles?.PRESSED?.TEXT,
                 (disabled || loading) && intentStyles?.DISABLED?.TEXT
               ]}>
               {title}

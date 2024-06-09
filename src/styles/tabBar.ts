@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { background } from '#/common/constants/colors';
+import { background, neutral } from '#/common/constants/colors';
 import { verticalScale } from '#/common/utils/scaling';
 
 export const tabBarStyles = StyleSheet.create({
@@ -9,7 +9,9 @@ export const tabBarStyles = StyleSheet.create({
     flex: 1
   },
   tabBar: {
+    borderColor: neutral.light,
     borderTopLeftRadius: verticalScale(16),
-    borderTopRightRadius: verticalScale(16)
+    borderTopRightRadius: verticalScale(16),
+    borderWidth: 1
   }
 });

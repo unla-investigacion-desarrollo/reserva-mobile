@@ -1,8 +1,7 @@
 import type { TextStyle } from 'react-native';
 
-import { ValueOf } from './utilities';
 import { FONT_FAMILIES, WEIGHTS, WEIGHT_NAMES } from '../constants/fonts';
-
+import { ValueOf } from './utilities';
 
 export type FontWeight = NonNullable<TextStyle['fontWeight']>;
 export type FontStyle = NonNullable<TextStyle['fontStyle']>;

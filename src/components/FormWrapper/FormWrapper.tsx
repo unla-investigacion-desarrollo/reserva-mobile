@@ -46,7 +46,7 @@ export function FormWrapper<D extends FieldValues>({
         <Button
           style={submitButtonStyle}
           onPress={handleSubmit(onSubmit)}
-          title={submitText || 'Core.Submit'}
+          title={submitText || 'Core.submit'}
           loading={loading}
         />
         {extraButtons?.map(({ key, ...button }) => <Button key={key} {...button} />)}

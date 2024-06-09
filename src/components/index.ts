@@ -7,3 +7,8 @@ export * from './LoadingWrapper';
 export * from './Text';
 export * from './Header';
 export * from './TabIcon';
+export * from './SightingCard';
+export * from './SearchBar';
+export * from './VisitUsCard';
+export * from './SightingTag';
+export * from './Image';

@@ -9,3 +9,5 @@ export const hasOneItem = <T>(array: T[]) => array.length === 1;
 export const hasMoreThanOneItem = <T>(array: T[]) => array.length > 1;
 
 export const hasMoreThanXItems = <T>(array: T[], x: number) => array.length > x;
+
+export const lastItem = <T>(array: T[]) => array[array.length - 1];

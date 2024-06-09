@@ -1,6 +1,5 @@
 import {
   ColorValue,
-  Image,
   ImageSourcePropType,
   Pressable,
   PressableProps,
@@ -8,6 +7,7 @@ import {
   ViewStyle
 } from 'react-native';
 
+import { Image } from '../Image';
 import styles from './styles';
 
 export interface IconProps extends PressableProps {

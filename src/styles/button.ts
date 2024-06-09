@@ -1,5 +1,5 @@
 import { BUTTON_INTENTS, BUTTON_STATES } from '#/common/constants/button';
-import { neutral, primary, transparent } from '#/common/constants/colors';
+import { neutral, primary, transparent, white } from '#/common/constants/colors';
 import { MEDIUM_WEIGHT, REGULAR_WEIGHT, SIZES } from '#/common/constants/fonts';
 import { ButtonIntentStyles } from '#/common/types/buttons';
 import { fontMaker } from '#/common/utils/fonts';
@@ -59,11 +59,11 @@ export const BUTTON_INTENT_STYLES: ButtonIntentStyles = {
     },
     [BUTTON_STATES.PRESSED]: {
       CONTAINER: {
-        backgroundColor: primary.light,
-        borderColor: primary.dark
+        backgroundColor: primary.default,
+        borderColor: primary.default
       },
       TEXT: {
-        color: primary.dark
+        color: white
       }
     },
     ACTIVITY_INDICATOR: {

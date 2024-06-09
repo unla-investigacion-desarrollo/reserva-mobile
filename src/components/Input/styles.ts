@@ -1,30 +1,38 @@
 import { StyleSheet } from 'react-native';
 
 import fonts from '#/common/config/fonts';
-import { COLORS } from '#/common/constants/colors';
+import { COLORS, primary } from '#/common/constants/colors';
 import { scale, verticalScale } from '#/common/utils/scaling';
-import { CENTER, FLEX_START, ROW } from '#/styles/positions';
+import { ABSOLUTE, CENTER, ROW } from '#/styles/positions';
 import { FULL_SIZE } from '#/styles/sizes';
 import { TEXT_SIZE } from '#/styles/text';
 
 const { SMALL } = TEXT_SIZE;
 
 export default StyleSheet.create({
+  clearButton: {
+    marginHorizontal: scale(8)
+  },
   container: {
-    paddingHorizontal: scale(16)
+    gap: scale(4)
   },
   error: {
     color: COLORS.error.default,
     marginBottom: verticalScale(3),
     marginLeft: scale(5)
   },
+  icon: {
+    bottom: verticalScale(12),
+    left: scale(8),
+    position: ABSOLUTE,
+    top: verticalScale(8)
+  },
   inputContainer: {
     alignItems: CENTER,
-    backgroundColor: COLORS.white,
-    borderRadius: scale(6),
+    borderColor: primary.default,
+    borderRadius: 12,
+    borderWidth: 1,
     flexDirection: ROW,
-    justifyContent: FLEX_START,
-    marginTop: verticalScale(4),
     width: FULL_SIZE
   },
   label: {
@@ -34,7 +42,8 @@ export default StyleSheet.create({
   textInput: {
     color: COLORS.black,
     flex: 1,
-    height: FULL_SIZE,
-    padding: scale(8)
+    height: verticalScale(48),
+    paddingLeft: scale(40),
+    paddingRight: scale(8)
   }
 });

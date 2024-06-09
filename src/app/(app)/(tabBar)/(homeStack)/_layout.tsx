@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <Stack screenOptions={{ header: () => <Header /> }}>
       {HOME_STACK_ROUTES.map(route => (
-        <Stack.Screen key={route} name={route} />
+        <Stack.Screen key={route.name} name={route.name} options={route.options} />
       ))}
     </Stack>
   );

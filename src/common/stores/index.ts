@@ -1,2 +1,2 @@
 export * from './mmkv';
-export * from './visitor';
+export * from './sighting';

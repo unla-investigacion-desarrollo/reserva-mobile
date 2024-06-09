@@ -10,7 +10,7 @@ export const HEADER = {
   PLATFORM: 'X-PLATFORM',
   AUTHORIZATION: 'Authorization',
   TENANT: 'X-TENANT'
-};
+} as const;
 
 export const api = create({
   baseURL: ENVIROMENT.BASE_URL,
@@ -20,6 +20,9 @@ export const api = create({
     [HEADER.PLATFORM]: ENVIROMENT.PLATFORM
   }
 });
+
+export const setAuthHeader = (token: string) => api.setHeader(HEADER.AUTHORIZATION, `Bearer ${token}`);
+export const removeAuthHeader = () => api.deleteHeader(HEADER.AUTHORIZATION);
 
 export const apiSetup = (baseApi: ApisauceInstance) => {
   baseApi.addResponseTransform(response => {

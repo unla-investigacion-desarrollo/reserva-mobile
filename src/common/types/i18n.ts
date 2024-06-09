@@ -1,6 +1,6 @@
-
 import { I18N_SEPARATOR, LOCALES } from '#/translations/constants';
 import { resources } from '#/translations/resources';
+
 import { ValueOf } from './utilities';
 
 export type Language = ValueOf<typeof LOCALES>;
