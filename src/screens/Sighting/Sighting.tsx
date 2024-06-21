@@ -3,7 +3,7 @@ import { FlatList, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { useGetSightingById } from '#/common/api/sighting/useGetSightingById';
+import { useGetSightingById } from '#/common/api';
 import { Text } from '#/components';
 import { Separator } from '#/components/Separator';
 

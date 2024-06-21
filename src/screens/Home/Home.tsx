@@ -29,7 +29,7 @@ export function Home() {
     sightings: homeSightings,
     sightingTypesData
   } = useSightingFetch({
-    type: selectedType ? selectedType.name : undefined
+    type: selectedType?.name
   });
 
   const {
@@ -39,9 +39,9 @@ export function Home() {
     sightings: searchSightings,
     hasNextPage: hasNextPageSearch
   } = useSightingFetch({
-    type: selectedType ? selectedType.name : undefined,
+    type: selectedType?.name,
     name: searchValue,
-    size: 2
+    size: 10
   });
 
   const sightingTypes = sightingTypesData?.data ?? [];

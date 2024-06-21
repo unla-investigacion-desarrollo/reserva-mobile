@@ -1,5 +1,6 @@
 import { createInfiniteQuery } from 'react-query-kit';
 
+import { SIGHTING } from '#/common/constants/queryKeys';
 import { getSightings } from '#/common/services/Sighting';
 import { GetSightingsParams, GetSightingsResponse } from '#/common/services/Sighting/types';
 import { ErrorResponse } from '#/common/services/types';
@@ -9,7 +10,7 @@ export const useGetSightings = createInfiniteQuery<
   GetSightingsParams,
   ErrorResponse
 >({
-  queryKey: ['/sighting'],
+  queryKey: [SIGHTING],
   fetcher: (variables, { pageParam }) => {
     return getSightings({ ...variables, page: pageParam }).then(res => res.data);
   },

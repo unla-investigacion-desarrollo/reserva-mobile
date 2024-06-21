@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { useGetSightings, useGetTypes } from '../api';
+import { queryClient, useGetSightings, useGetTypes } from '../api';
+import { SIGHTING } from '../constants/queryKeys';
 import { flattenPaginatedSightingResponses } from '../models/sightings';
 
 export type UseSightingFetchParams = {
@@ -22,6 +23,12 @@ export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParam
     return () => clearTimeout(timeoutId);
   }, [name]);
 
+  useEffect(() => {
+    if (!type) {
+      queryClient.resetQueries({ queryKey: [SIGHTING] });
+    }
+  }, [type]);
+
   const {
     data: sightingData,
     isFetching: isFetchingSightings,
@@ -34,10 +41,16 @@ export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParam
   });
 
   const loadMoreSightings = () => {
+    console.log('isFetchingSightings in load more', isFetchingSightings);
+    console.log('hasNextPage in load more', hasNextPage);
     if (hasNextPage && !isFetchingSightings) {
+      console.log('got in');
       fetchNextPage();
     }
   };
+
+  useEffect(() => console.log('isFetchingSightings', isFetchingSightings), [isFetchingSightings]);
+  useEffect(() => console.log('hasNextPage', hasNextPage), [hasNextPage]);
 
   const isLoadingSightings = isLoading || userIsTyping;
 

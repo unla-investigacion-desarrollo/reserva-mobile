@@ -1,2 +1,2 @@
 export * from './useGetSigntings';
-export * from './useGetTypes';
+export * from './useGetSightingById';

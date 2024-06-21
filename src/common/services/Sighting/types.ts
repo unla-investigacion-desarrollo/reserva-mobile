@@ -1,4 +1,4 @@
-import { Sighting, SightingType } from '#/common/types/stightings';
+import { Sighting } from '#/common/types/stightings';
 
 import { Pagination } from '../types';
 
@@ -17,5 +17,3 @@ export type GetSightingsResponse = Pagination<Sighting>;
 export type GetSightingByIdParams = { id: string };
 
 export type GetSightingByIdResponse = Sighting;
-
-export type GetSightingTypesResponse = Pagination<SightingType>;

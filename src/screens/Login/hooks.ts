@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 import { useForm } from '@tanstack/react-form';
 import { zodValidator } from '@tanstack/zod-form-adapter';
 
-import { useLoginMutation } from '#/common/api/auth/login';
+import { useLoginMutation } from '#/common/api';
 import { setAuthHeader } from '#/common/config/api';
 import { ROUTE_LINKS } from '#/common/constants/routes';
 import { useMount } from '#/common/hooks/useMount';
