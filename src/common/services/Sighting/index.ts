@@ -3,7 +3,6 @@ import api from '#/common/config/api';
 import {
   GetSightingByIdParams,
   GetSightingByIdResponse,
-  GetSightingTypesResponse,
   GetSightingsParams,
   GetSightingsResponse
 } from './types';
@@ -14,5 +13,3 @@ export const getSightings = (params: GetSightingsParams) => api.get<GetSightings
 
 export const getSightingById = ({ id }: GetSightingByIdParams) =>
   api.get<GetSightingByIdResponse>(`${BASE_URL}/${id}`);
-
-export const getSightingTypes = () => api.get<GetSightingTypesResponse>(`${BASE_URL}/type`);

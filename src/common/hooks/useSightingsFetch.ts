@@ -1,35 +1,70 @@
 import { useEffect, useState } from 'react';
 
-import { useGetSightings } from '../api';
-import { Sighting } from '../types/stightings';
-import { isEmpty } from '../utils/array';
+import { queryClient, useGetSightings, useGetTypes } from '../api';
+import { SIGHTING } from '../constants/queryKeys';
+import { flattenPaginatedSightingResponses } from '../models/sightings';
 
-export const useSightingFetch = (size = 4, type: string) => {
-  const [sightings, setSightings] = useState<Sighting[]>([]);
+export type UseSightingFetchParams = {
+  type?: string;
+  name?: string;
+  size?: number;
+};
 
-  const [page, setPage] = useState(1);
-  const [lastPage, setLastPage] = useState(false);
-
-  const {
-    data: sightingsDataPage,
-    isFetching,
-    isSuccess
-  } = useGetSightings({ variables: { size, page, type } });
+export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParams) => {
+  const [debouncedName, setDebouncedName] = useState<string | undefined>(name);
+  const [userIsTyping, setuserIsTyping] = useState(false);
 
   useEffect(() => {
-    if (isSuccess && sightingsDataPage && sightingsDataPage.data && !isEmpty(sightingsDataPage.data)) {
-      setSightings([...sightings, ...sightingsDataPage.data]);
-      if (sightingsDataPage.amountOfPages === page) {
-        setLastPage(true);
-      }
+    setuserIsTyping(true);
+    const timeoutId = setTimeout(() => {
+      setDebouncedName(name);
+      setuserIsTyping(false);
+    }, 300);
+    return () => clearTimeout(timeoutId);
+  }, [name]);
+
+  useEffect(() => {
+    if (!type) {
+      queryClient.resetQueries({ queryKey: [SIGHTING] });
     }
-  }, [sightingsDataPage]);
+  }, [type]);
+
+  const {
+    data: sightingData,
+    isFetching: isFetchingSightings,
+    isFetchingNextPage: isFetchingNextSightings,
+    isLoading,
+    hasNextPage,
+    fetchNextPage
+  } = useGetSightings({
+    variables: { size, type, name: debouncedName }
+  });
 
   const loadMoreSightings = () => {
-    if (!lastPage && !isFetching) {
-      setPage(page + 1);
+    console.log('isFetchingSightings in load more', isFetchingSightings);
+    console.log('hasNextPage in load more', hasNextPage);
+    if (hasNextPage && !isFetchingSightings) {
+      console.log('got in');
+      fetchNextPage();
     }
   };
 
-  return { loadMoreSightings, sightings };
+  useEffect(() => console.log('isFetchingSightings', isFetchingSightings), [isFetchingSightings]);
+  useEffect(() => console.log('hasNextPage', hasNextPage), [hasNextPage]);
+
+  const isLoadingSightings = isLoading || userIsTyping;
+
+  const sightings = flattenPaginatedSightingResponses(sightingData) ?? [];
+
+  const { data: sightingTypesData } = useGetTypes();
+
+  return {
+    loadMoreSightings,
+    isLoadingSightings,
+    isFetchingSightings,
+    isFetchingNextSightings,
+    hasNextPage,
+    sightings,
+    sightingTypesData
+  };
 };

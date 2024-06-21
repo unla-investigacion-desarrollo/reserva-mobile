@@ -10,7 +10,7 @@ import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { shadowStyles } from '#/styles/shadows';
 
-import { Image } from '../Image';
+import { ExternalImage } from '../ExternalImage';
 import { Text } from '../Text';
 import { ICON_SIZE, styles } from './styles';
 
@@ -30,7 +30,7 @@ export function SightingCard({ sighting, style }: SightingCardProps) {
       asChild
       style={[styles.sightingCard, shadowStyles.baseShadow(black), style]}>
       <Pressable>
-        <Image source={sighting.images[0].url} style={styles.image as ImageStyle} />
+        <ExternalImage source={sighting.images[0]?.url} style={styles.image as ImageStyle} />
         <View style={styles.body}>
           <Text numberOfLines={1} style={styles.name}>
             {sighting.name}

@@ -1,10 +1,11 @@
 import { createQuery } from 'react-query-kit';
 
-import { getSightingTypes } from '#/common/services/Sighting';
-import { GetSightingTypesResponse } from '#/common/services/Sighting/types';
+import { SIGHTING_TYPE } from '#/common/constants/queryKeys';
+import { getSightingTypes } from '#/common/services';
+import { GetSightingTypesResponse } from '#/common/services/SightingType/types';
 import { ErrorResponse } from '#/common/services/types';
 
 export const useGetTypes = createQuery<GetSightingTypesResponse | undefined, void, ErrorResponse>({
-  queryKey: ['/types'],
+  queryKey: [SIGHTING_TYPE],
   fetcher: () => getSightingTypes().then(res => res.data)
 });

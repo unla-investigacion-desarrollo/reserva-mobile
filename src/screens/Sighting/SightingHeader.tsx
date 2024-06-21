@@ -13,7 +13,7 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '#/common/constants/platform';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { lastItem } from '#/common/utils/array';
-import { Button, Image, Text } from '#/components';
+import { Button, ExternalImage, Text } from '#/components';
 
 import { BACK_ICON_SIZE, CATEGORY_ICON_SIZE, styles } from './styles';
 
@@ -35,7 +35,9 @@ export function SightingHeader({ sighting }: SightingHeaderProps) {
           width={WINDOW_WIDTH}
           height={WINDOW_HEIGHT * (7 / 16)}
           onSnapToItem={index => setCurrentImageIndex(index)}
-          renderItem={({ item }) => <Image source={item.url} style={styles.backgroundImage as ImageStyle} />}
+          renderItem={({ item }) => (
+            <ExternalImage source={item.url} style={styles.backgroundImage as ImageStyle} />
+          )}
         />
         <View style={styles.dotRow}>
           {sighting.images.map((_, index) => {
@@ -63,7 +65,7 @@ export function SightingHeader({ sighting }: SightingHeaderProps) {
           </View>
           <Text style={[styles.type, styles.tag]}>{sighting.type.name}</Text>
         </View>
-        <Image source={lastItem(sighting.images).url} style={styles.bannerImage as ImageStyle} />
+        <ExternalImage source={lastItem(sighting.images).url} style={styles.bannerImage as ImageStyle} />
       </View>
     </View>
   );

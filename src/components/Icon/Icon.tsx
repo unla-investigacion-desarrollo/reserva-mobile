@@ -7,7 +7,7 @@ import {
   ViewStyle
 } from 'react-native';
 
-import { Image } from '../Image';
+import { ExternalImage } from '../ExternalImage';
 import styles from './styles';
 
 export interface IconProps extends PressableProps {
@@ -35,7 +35,7 @@ export function Icon({
       onPress={onPress}
       pointerEvents={onPress ? 'auto' : 'none'}
       {...props}>
-      <Image source={source} style={styles.image(size, tintColor)} />
+      <ExternalImage source={source} style={styles.image(size, tintColor)} />
     </Pressable>
   );
 }

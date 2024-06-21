@@ -5,7 +5,7 @@ import { ActivityIndicator, ActivityIndicatorProps, ColorValue, View } from 'rea
 import styles from './styles';
 
 interface Props extends ActivityIndicatorProps {
-  loading: boolean;
+  loading?: boolean;
   children: JSX.Element;
   backgroundColor?: ColorValue;
   withInitialLoading?: boolean;
