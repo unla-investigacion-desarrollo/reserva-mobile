@@ -3,6 +3,7 @@ import { Sighting, SightingType } from '#/common/types/stightings';
 import { Pagination } from '../types';
 
 export type GetSightingsParams = {
+  name?: string;
   status?: string;
   type?: string;
   page?: number;

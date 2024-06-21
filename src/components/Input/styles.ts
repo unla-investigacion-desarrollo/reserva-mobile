@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import fonts from '#/common/config/fonts';
-import { COLORS, primary } from '#/common/constants/colors';
+import { COLORS, error, primary } from '#/common/constants/colors';
 import { scale, verticalScale } from '#/common/utils/scaling';
 import { ABSOLUTE, CENTER, ROW } from '#/styles/positions';
 import { FULL_SIZE } from '#/styles/sizes';
@@ -14,12 +14,13 @@ export default StyleSheet.create({
     marginHorizontal: scale(8)
   },
   container: {
-    gap: scale(4)
+    gap: verticalScale(4)
   },
-  error: {
-    color: COLORS.error.default,
-    marginBottom: verticalScale(3),
-    marginLeft: scale(5)
+  errorList: {
+    paddingTop: verticalScale(4)
+  },
+  errorlabel: {
+    color: error.default
   },
   icon: {
     bottom: verticalScale(12),
@@ -27,14 +28,14 @@ export default StyleSheet.create({
     position: ABSOLUTE,
     top: verticalScale(8)
   },
-  inputContainer: {
+  inputContainer: (hasError = false) => ({
     alignItems: CENTER,
-    borderColor: primary.default,
+    borderColor: hasError ? error.default : primary.default,
     borderRadius: 12,
     borderWidth: 1,
     flexDirection: ROW,
     width: FULL_SIZE
-  },
+  }),
   label: {
     ...SMALL,
     ...fonts.baseFont

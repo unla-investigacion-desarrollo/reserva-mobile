@@ -1,0 +1,10 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="lock">
+        <path id="Vector"
+            d="M19 11.0054H5C3.89543 11.0054 3 11.9008 3 13.0054V20.0054C3 21.1099 3.89543 22.0054 5 22.0054H19C20.1046 22.0054 21 21.1099 21 20.0054V13.0054C21 11.9008 20.1046 11.0054 19 11.0054Z"
+            stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path id="Vector_2"
+            d="M7 11.0054V7.00537C7 5.67929 7.52678 4.40752 8.46447 3.46984C9.40215 2.53216 10.6739 2.00537 12 2.00537C13.3261 2.00537 14.5979 2.53216 15.5355 3.46984C16.4732 4.40752 17 5.67929 17 7.00537V11.0054"
+            stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+</svg>

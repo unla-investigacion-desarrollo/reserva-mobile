@@ -1,35 +1,57 @@
 import { useEffect, useState } from 'react';
 
-import { useGetSightings } from '../api';
-import { Sighting } from '../types/stightings';
-import { isEmpty } from '../utils/array';
+import { useGetSightings, useGetTypes } from '../api';
+import { flattenPaginatedSightingResponses } from '../models/sightings';
 
-export const useSightingFetch = (size = 4, type: string) => {
-  const [sightings, setSightings] = useState<Sighting[]>([]);
+export type UseSightingFetchParams = {
+  type?: string;
+  name?: string;
+  size?: number;
+};
 
-  const [page, setPage] = useState(1);
-  const [lastPage, setLastPage] = useState(false);
-
-  const {
-    data: sightingsDataPage,
-    isFetching,
-    isSuccess
-  } = useGetSightings({ variables: { size, page, type } });
+export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParams) => {
+  const [debouncedName, setDebouncedName] = useState<string | undefined>(name);
+  const [userIsTyping, setuserIsTyping] = useState(false);
 
   useEffect(() => {
-    if (isSuccess && sightingsDataPage && sightingsDataPage.data && !isEmpty(sightingsDataPage.data)) {
-      setSightings([...sightings, ...sightingsDataPage.data]);
-      if (sightingsDataPage.amountOfPages === page) {
-        setLastPage(true);
-      }
-    }
-  }, [sightingsDataPage]);
+    setuserIsTyping(true);
+    const timeoutId = setTimeout(() => {
+      setDebouncedName(name);
+      setuserIsTyping(false);
+    }, 300);
+    return () => clearTimeout(timeoutId);
+  }, [name]);
+
+  const {
+    data: sightingData,
+    isFetching: isFetchingSightings,
+    isFetchingNextPage: isFetchingNextSightings,
+    isLoading,
+    hasNextPage,
+    fetchNextPage
+  } = useGetSightings({
+    variables: { size, type, name: debouncedName }
+  });
 
   const loadMoreSightings = () => {
-    if (!lastPage && !isFetching) {
-      setPage(page + 1);
+    if (hasNextPage && !isFetchingSightings) {
+      fetchNextPage();
     }
   };
 
-  return { loadMoreSightings, sightings };
+  const isLoadingSightings = isLoading || userIsTyping;
+
+  const sightings = flattenPaginatedSightingResponses(sightingData) ?? [];
+
+  const { data: sightingTypesData } = useGetTypes();
+
+  return {
+    loadMoreSightings,
+    isLoadingSightings,
+    isFetchingSightings,
+    isFetchingNextSightings,
+    hasNextPage,
+    sightings,
+    sightingTypesData
+  };
 };

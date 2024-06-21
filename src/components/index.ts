@@ -1,6 +1,5 @@
 export * from './Button';
 export * from './Card';
-export * from './FormWrapper';
 export * from './Icon';
 export * from './Input';
 export * from './LoadingWrapper';
@@ -11,4 +10,4 @@ export * from './SightingCard';
 export * from './SearchBar';
 export * from './VisitUsCard';
 export * from './SightingTag';
-export * from './Image';
+export * from './ExternalImage';

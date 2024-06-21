@@ -1,9 +1,11 @@
+import { InfiniteData } from '@tanstack/react-query';
+
 import { PawIcon, TreeIcon } from '#/assets';
 
 import { CATEGORIES } from '../constants/sightings';
+import { GetSightingsResponse } from '../services/Sighting/types';
 import { Sighting, SightingType } from '../types/stightings';
 import { ValueOf } from '../types/utilities';
-import { hasLength, normalize } from '../utils/string';
 
 export const getTypesFromSightings = (sightings: Sighting[]) =>
   sightings.reduce(
@@ -12,17 +14,13 @@ export const getTypesFromSightings = (sightings: Sighting[]) =>
     [] as SightingType[]
   );
 
-export const filterSightings = (sightings: Sighting[], type: SightingType | null, searchValue: string) => {
-  const normalizedSearchValue = normalize(searchValue);
-  return sightings.filter(
-    sighting =>
-      (type ? sighting.type.name === type.name : true) &&
-      (hasLength(normalizedSearchValue)
-        ? normalize(sighting.name).includes(normalizedSearchValue) ||
-          normalize(sighting.scientificName).includes(normalizedSearchValue)
-        : true)
-  );
-};
-
 export const getCategoryIcon = (category: ValueOf<typeof CATEGORIES>) =>
   category === CATEGORIES.FAUNA ? PawIcon : TreeIcon;
+
+export const flattenPaginatedSightingResponses = (
+  paginatedSightingResponses: InfiniteData<GetSightingsResponse | undefined, number> | undefined
+) =>
+  paginatedSightingResponses?.pages
+    .filter((item): item is GetSightingsResponse => item !== undefined)
+    .map(sightingResponse => sightingResponse.data)
+    .flat();

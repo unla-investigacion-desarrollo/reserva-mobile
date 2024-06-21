@@ -1,54 +1,50 @@
-/* eslint-disable react/display-name */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { FlatList, View } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
 import { SearchIcon } from '#/assets';
-import { useGetSightings, useGetTypes } from '#/common/api';
 import { BUTTON_INTENTS } from '#/common/constants/button';
 import { neutral, primary } from '#/common/constants/colors';
-import { filterSightings } from '#/common/models/sightings';
-import { Sighting, SightingType } from '#/common/types/stightings';
-import { isEmpty } from '#/common/utils/array';
+import { useSightingFetch } from '#/common/hooks/useSightingsFetch';
+import { SightingType } from '#/common/types/stightings';
 import { Button, Input } from '#/components';
 import { Separator } from '#/components/Separator';
 import i18n from '#/translations';
 
 import { SightingCards } from './SightingCards';
 import { SightingList } from './SightingList';
-import { TYPE_FILTERS_GAP, styles } from './styles';
+import { TYPE_FILTERS_GAP, TYPE_HEADER_FOOTER_GAP, styles } from './styles';
 
 export function Home() {
   const [searchValue, setSearchValue] = useState('');
 
-  const [page, setPage] = useState(1);
-
-  const [sightings, setSightings] = useState<Sighting[]>([]);
+  const [selectedType, setSelectedType] = useState<SightingType | null>(null);
 
   const {
-    data: sightingsDataPage,
-    isSuccess,
-    isFetching
-  } = useGetSightings({ variables: { page, size: 4 }, queryHash: '' });
-  const { data: sightingTypesData } = useGetTypes();
+    loadMoreSightings: loadMoreHome,
+    isFetchingNextSightings: isFetchingNextPageHome,
+    isLoadingSightings: isLoadingHome,
+    sightings: homeSightings,
+    sightingTypesData
+  } = useSightingFetch({
+    type: selectedType ? selectedType.name : undefined
+  });
 
-  useEffect(() => {
-    if (isSuccess && sightingsDataPage && sightingsDataPage.data && !isEmpty(sightingsDataPage.data)) {
-      setSightings([...sightings, ...sightingsDataPage.data]);
-    }
-  }, [sightingsDataPage]);
+  const {
+    loadMoreSightings: loadMoreSearch,
+    isFetchingNextSightings: isFetchingNextPageSearch,
+    isLoadingSightings: isLoadingSearch,
+    sightings: searchSightings,
+    hasNextPage: hasNextPageSearch
+  } = useSightingFetch({
+    type: selectedType ? selectedType.name : undefined,
+    name: searchValue,
+    size: 2
+  });
 
   const sightingTypes = sightingTypesData?.data ?? [];
-  const [selectedType, setSelectedType] = useState<SightingType | null>(null);
-  const shownSightings = filterSightings(sightings, selectedType, searchValue);
-
-  const handleListEnd = () => {
-    if (!isFetching) {
-      setPage(page + 1);
-    }
-  };
 
   return (
     <View style={styles.home}>
@@ -60,12 +56,14 @@ export function Home() {
         onChangeText={setSearchValue}
         Icon={SearchIcon}
         iconColor={primary.default}
-        iconStyles={styles.searchIcon}
+        iconStyle={styles.searchIcon}
         showClearButton
       />
       <View style={styles.typeFilters}>
         <FlatList
           horizontal
+          ListHeaderComponent={() => <Separator gap={TYPE_HEADER_FOOTER_GAP} />}
+          ListFooterComponent={() => <Separator gap={TYPE_HEADER_FOOTER_GAP} />}
           showsHorizontalScrollIndicator={false}
           data={sightingTypes}
           style={styles.typeFilters}
@@ -86,9 +84,20 @@ export function Home() {
         />
       </View>
       {searchValue.length > 0 ? (
-        <SightingList sightings={shownSightings} />
+        <SightingList
+          sightings={searchSightings}
+          onLoadMoreSightings={loadMoreSearch}
+          isLoading={isLoadingSearch}
+          isLoadingNextPage={isFetchingNextPageSearch}
+          hasNextPage={hasNextPageSearch}
+        />
       ) : (
-        <SightingCards sightings={shownSightings} onEndReached={handleListEnd} isLoading={isFetching} />
+        <SightingCards
+          sightings={homeSightings}
+          onEndReached={loadMoreHome}
+          isLoading={isLoadingHome}
+          isLoadingNextPage={isFetchingNextPageHome}
+        />
       )}
     </View>
   );

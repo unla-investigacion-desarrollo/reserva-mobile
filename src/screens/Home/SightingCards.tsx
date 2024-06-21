@@ -1,8 +1,11 @@
+import { useCallback } from 'react';
+
 import { ActivityIndicator, FlatList, View, ViewStyle } from 'react-native';
 
+import { primary } from '#/common/constants/colors';
 import { Sighting } from '#/common/types/stightings';
 import { isEven } from '#/common/utils/numbers';
-import { SightingCard, VisitUsCard } from '#/components';
+import { SightingCard, Text, VisitUsCard } from '#/components';
 import { Separator } from '#/components/Separator';
 
 import { SIGHTING_CARDS_GAP, styles } from './styles';
@@ -11,19 +14,34 @@ export type SightingCardsProps = {
   sightings: Sighting[];
   onEndReached: () => void;
   isLoading?: boolean;
+  isLoadingNextPage?: boolean;
 };
 
-export function SightingCards({ sightings, onEndReached, isLoading }: SightingCardsProps) {
-  const loadingFooter = () => {
-    return (
-      //Footer View with Loader
-      <View>{isLoading && <ActivityIndicator color="black" style={styles.activityIndicator} />}</View>
-    );
-  };
+export function SightingCards({ sightings, onEndReached, isLoading, isLoadingNextPage }: SightingCardsProps) {
+  const CardsFooter = useCallback(
+    () => (
+      <View>
+        {isLoadingNextPage && <ActivityIndicator color={primary.default} style={styles.activityIndicator} />}
+      </View>
+    ),
+
+    [isLoadingNextPage]
+  );
+
+  const EmptyListComponent = useCallback(
+    () =>
+      isLoading ? (
+        <ActivityIndicator color={primary.default} style={styles.activityIndicator} />
+      ) : (
+        <Text tx="Home.noSightings" style={styles.emptyListText} />
+      ),
+    []
+  );
 
   return (
     <View style={styles.flatListContainer}>
       <FlatList
+        keyExtractor={(item, index) => `${item.scientificName}-${item.id}-${index}`}
         contentContainerStyle={styles.flatList}
         ListHeaderComponent={
           <View style={styles.visitUsCardContainer}>
@@ -33,7 +51,8 @@ export function SightingCards({ sightings, onEndReached, isLoading }: SightingCa
         ListHeaderComponentStyle={styles.visitUsCard}
         showsVerticalScrollIndicator={false}
         numColumns={2}
-        ListFooterComponent={loadingFooter}
+        ListFooterComponent={CardsFooter}
+        ListEmptyComponent={EmptyListComponent}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.5}
         data={sightings}

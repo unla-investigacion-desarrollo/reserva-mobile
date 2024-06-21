@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, useState } from 'react';
 
 import {
   StyleProp,
@@ -10,68 +10,77 @@ import {
   ViewStyle
 } from 'react-native';
 
-import { CrossIcon } from '#/assets';
-import { neutral } from '#/common/constants/colors';
+import { ValidationError } from '@tanstack/react-form';
+
+import { CrossIcon, EyeIcon, EyeOffIcon } from '#/assets';
+import { neutral, primary } from '#/common/constants/colors';
 import { SvgComponent } from '#/common/types/assets';
 import { Color } from '#/common/types/colors';
 import { TxOrString } from '#/common/types/i18n';
+import { isEmpty } from '#/common/utils/array';
 import { hasLength } from '#/common/utils/string';
 
-import { Text } from '../Text';
+import { ErrorText, Text } from '../Text';
 import styles from './styles';
 
 export interface InputProps extends TextInputProps {
   label?: TxOrString;
-  error?: TxOrString;
+  labelStyle?: StyleProp<TextStyle>;
+  errors?: TxOrString[] | ValidationError[];
   onChangeText?: (value: string) => void;
   value?: string;
   containerStyle?: StyleProp<ViewStyle>;
   inputContainerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   errorStyle?: StyleProp<TextStyle>;
-  editable?: boolean;
   Icon?: SvgComponent;
   iconColor?: Color;
-  iconStyles?: TextStyle;
+  iconStyle?: TextStyle;
   showClearButton?: boolean;
+  hideText?: boolean;
 }
 
 const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
   const {
     label,
+    labelStyle,
     containerStyle,
     inputContainerStyle,
     textStyle,
     onChangeText,
     value,
-    editable,
-    error,
+    errors,
     errorStyle,
     autoCapitalize = 'none',
     autoComplete = 'off',
     Icon,
     iconColor,
-    iconStyles,
-    showClearButton
+    iconStyle,
+    showClearButton,
+    hideText
   } = props;
+  const [hiddenText, setHiddenText] = useState(hideText);
+  const HiddenTextIcon = hiddenText ? EyeIcon : EyeOffIcon;
+
+  const hasErrors = errors && !isEmpty(errors);
   return (
     <View style={[styles.container, containerStyle]}>
       {label ? (
-        <Text tx={label} style={styles.label}>
+        <Text tx={label} style={[styles.label, labelStyle, hasErrors && styles.errorlabel]}>
           {label}
         </Text>
       ) : null}
-      <View style={[styles.inputContainer, inputContainerStyle]}>
-        {!!Icon && <Icon stroke={iconColor} style={[styles.icon, iconStyles]} />}
+      <View style={[styles.inputContainer(hasErrors) as ViewStyle, inputContainerStyle]}>
+        {!!Icon && <Icon stroke={iconColor} style={[styles.icon, iconStyle]} />}
         <TextInput
           placeholderTextColor={neutral.dark}
           ref={ref}
-          editable={editable}
           autoCapitalize={autoCapitalize}
           autoComplete={autoComplete}
           style={[styles.textInput, textStyle]}
           onChangeText={onChangeText}
           value={value}
+          secureTextEntry={hiddenText}
           {...props}
         />
         {showClearButton && hasLength(value) && (
@@ -84,11 +93,21 @@ const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
             <CrossIcon style={styles.clearButton} stroke={neutral.dark} />
           </TouchableOpacity>
         )}
+        {hideText && (
+          <TouchableOpacity
+            onPress={() => {
+              setHiddenText(!hiddenText);
+            }}>
+            <HiddenTextIcon style={styles.clearButton} stroke={primary.default} />
+          </TouchableOpacity>
+        )}
       </View>
-      {error ? (
-        <Text tx={error} style={[styles.error, errorStyle]}>
-          {error}
-        </Text>
+      {hasErrors ? (
+        <View style={styles.errorList}>
+          {errors.map((error, index) =>
+            error ? <ErrorText textStyle={errorStyle} key={`${index}-${error}`} errorMessage={error} /> : null
+          )}
+        </View>
       ) : null}
     </View>
   );
