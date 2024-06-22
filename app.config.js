@@ -67,6 +67,12 @@ export default () => {
           {
             fonts: fontRoutes
           }
+        ],
+        [
+          'expo-camera',
+          {
+            cameraPermission: 'Da permiso a $(PRODUCT_NAME) para acceder a la cámara'
+          }
         ]
       ],
       extra: {
