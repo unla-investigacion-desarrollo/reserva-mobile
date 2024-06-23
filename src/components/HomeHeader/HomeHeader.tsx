@@ -8,7 +8,7 @@ import { white } from '#/common/constants/colors';
 import { Text } from '../Text';
 import { styles } from './styles';
 
-export function Header() {
+export function HomeHeader() {
   const { top } = useSafeAreaInsets();
   return (
     <View style={styles.container(top) as ViewStyle}>

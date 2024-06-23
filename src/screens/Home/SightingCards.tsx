@@ -15,9 +15,16 @@ export type SightingCardsProps = {
   onEndReached: () => void;
   isLoading?: boolean;
   isLoadingNextPage?: boolean;
+  hasNextPage?: boolean;
 };
 
-export function SightingCards({ sightings, onEndReached, isLoading, isLoadingNextPage }: SightingCardsProps) {
+export function SightingCards({
+  sightings,
+  onEndReached,
+  isLoading,
+  isLoadingNextPage,
+  hasNextPage
+}: SightingCardsProps) {
   const CardsFooter = useCallback(
     () => (
       <View>
@@ -30,7 +37,7 @@ export function SightingCards({ sightings, onEndReached, isLoading, isLoadingNex
 
   const EmptyListComponent = useCallback(
     () =>
-      isLoading ? (
+      isLoading || isLoadingNextPage ? (
         <ActivityIndicator color={primary.default} style={styles.activityIndicator} />
       ) : (
         <Text tx="Home.noSightings" style={styles.emptyListText} />
@@ -53,7 +60,7 @@ export function SightingCards({ sightings, onEndReached, isLoading, isLoadingNex
         numColumns={2}
         ListFooterComponent={CardsFooter}
         ListEmptyComponent={EmptyListComponent}
-        onEndReached={onEndReached}
+        onEndReached={hasNextPage ? onEndReached : undefined}
         onEndReachedThreshold={0.5}
         data={sightings}
         ItemSeparatorComponent={() => <Separator gap={SIGHTING_CARDS_GAP} />}

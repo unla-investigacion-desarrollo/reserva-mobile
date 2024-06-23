@@ -1,6 +1,6 @@
 export const CORE_ES = {
   submit: 'Enviar',
-  goBack: 'Atras'
+  goBack: 'Atrás'
 };
 
 export const ERROR_ES = {

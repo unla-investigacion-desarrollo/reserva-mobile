@@ -41,16 +41,10 @@ export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParam
   });
 
   const loadMoreSightings = () => {
-    console.log('isFetchingSightings in load more', isFetchingSightings);
-    console.log('hasNextPage in load more', hasNextPage);
     if (hasNextPage && !isFetchingSightings) {
-      console.log('got in');
       fetchNextPage();
     }
   };
-
-  useEffect(() => console.log('isFetchingSightings', isFetchingSightings), [isFetchingSightings]);
-  useEffect(() => console.log('hasNextPage', hasNextPage), [hasNextPage]);
 
   const isLoadingSightings = isLoading || userIsTyping;
 

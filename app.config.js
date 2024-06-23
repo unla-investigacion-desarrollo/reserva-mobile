@@ -34,7 +34,10 @@ export default () => {
       ios: {
         supportsTablet: true,
         googleServicesFile: `./googleServices/${googleServicesRoute}/GoogleService-Info.plist`,
-        bundleIdentifier: bundleName
+        bundleIdentifier: bundleName,
+        infoPlist: {
+          NSAppTransportSecurity: { NSAllowsArbitraryLoads: true }
+        }
       },
       android: {
         adaptiveIcon: {
@@ -62,18 +65,7 @@ export default () => {
             }
           }
         ],
-        [
-          'expo-font',
-          {
-            fonts: fontRoutes
-          }
-        ],
-        [
-          'expo-camera',
-          {
-            cameraPermission: 'Da permiso a $(PRODUCT_NAME) para acceder a la cámara'
-          }
-        ]
+        ['expo-font', { fonts: fontRoutes }]
       ],
       extra: {
         eas: {

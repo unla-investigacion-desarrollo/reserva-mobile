@@ -32,15 +32,17 @@ export function SightingCard({ sighting, style }: SightingCardProps) {
       <Pressable>
         <ExternalImage source={sighting.images[0]?.url} style={styles.image as ImageStyle} />
         <View style={styles.body}>
-          <Text numberOfLines={1} style={styles.name}>
+          <Text numberOfLines={2} style={styles.name}>
             {sighting.name}
           </Text>
-          <Text numberOfLines={1} style={styles.scientificName}>
-            {sighting.scientificName}
-          </Text>
-          <View style={styles.typeRow}>
-            <Icon width={ICON_SIZE} height={ICON_SIZE} {...iconColor} />
-            <Text style={styles.type}>{sighting.type.name}</Text>
+          <View>
+            <Text numberOfLines={1} style={styles.scientificName}>
+              {sighting.scientificName}
+            </Text>
+            <View style={styles.typeRow}>
+              <Icon width={ICON_SIZE} height={ICON_SIZE} {...iconColor} />
+              <Text style={styles.type}>{sighting.type.name}</Text>
+            </View>
           </View>
         </View>
       </Pressable>

@@ -1,10 +1,10 @@
 import { FlatList, View } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useGetSightingById } from '#/common/api';
 import { Text } from '#/components';
+import { BackButtonHeader } from '#/components/BackButtonHeader';
 import { Separator } from '#/components/Separator';
 
 import { SightingHeader } from './SightingHeader';
@@ -17,13 +17,12 @@ export type SightingProps = {
 export function Sighting({ sightingId }: SightingProps) {
   const { data: sighting, isLoading } = useGetSightingById({ variables: { id: sightingId } });
 
-  const { top } = useSafeAreaInsets();
   return (
     !isLoading &&
     sighting && (
       <View style={styles.SightingContainer}>
         <StatusBar animated style="dark" />
-        <View style={styles.header(top)} />
+        <BackButtonHeader />
         <FlatList
           bounces={false}
           contentContainerStyle={styles.fields}

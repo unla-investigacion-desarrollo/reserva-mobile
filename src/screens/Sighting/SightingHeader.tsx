@@ -3,19 +3,17 @@ import { useRef, useState } from 'react';
 import { View } from 'react-native';
 
 import { ImageStyle } from 'expo-image';
-import { router } from 'expo-router';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 
-import { ArrowLeftIcon } from '#/assets';
-import { primary, transparent, white } from '#/common/constants/colors';
+import { primary } from '#/common/constants/colors';
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '#/common/constants/platform';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { lastItem } from '#/common/utils/array';
-import { Button, ExternalImage, Text } from '#/components';
+import { ExternalImage, Text } from '#/components';
 
-import { BACK_ICON_SIZE, CATEGORY_ICON_SIZE, styles } from './styles';
+import { CATEGORY_ICON_SIZE, styles } from './styles';
 
 export type SightingHeaderProps = {
   sighting: Sighting;
@@ -44,16 +42,6 @@ export function SightingHeader({ sighting }: SightingHeaderProps) {
             return <View key={`dot-${index}`} style={styles.dot(index === currentImageIndex)} />;
           })}
         </View>
-        <Button
-          Svg={ArrowLeftIcon}
-          iconSize={BACK_ICON_SIZE}
-          iconStroke={white}
-          iconFill={transparent}
-          title="Core.goBack"
-          textStyle={styles.backButtonText}
-          style={styles.backButton}
-          onPress={() => router.back()}
-        />
       </View>
       <View style={styles.headerInfo}>
         <Text style={styles.name}>{sighting.name}</Text>

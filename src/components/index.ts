@@ -4,7 +4,7 @@ export * from './Icon';
 export * from './Input';
 export * from './LoadingWrapper';
 export * from './Text';
-export * from './Header';
+export * from './HomeHeader';
 export * from './TabIcon';
 export * from './SightingCard';
 export * from './SearchBar';

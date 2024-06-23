@@ -16,6 +16,8 @@ export const styles = StyleSheet.create({
     width: scale(95)
   },
   appIconShadow: {
+    backgroundColor: accent.default,
+    borderRadius: 24,
     ...shadowStyles.baseShadow(black)
   },
   body: {

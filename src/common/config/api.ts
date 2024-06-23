@@ -12,8 +12,10 @@ export const HEADER = {
   TENANT: 'X-TENANT'
 } as const;
 
+export const apiBaseURL = ENVIROMENT.BASE_URL; //'http://192.168.0.204:8000';
+
 export const api = create({
-  baseURL: ENVIROMENT.BASE_URL,
+  baseURL: apiBaseURL,
   timeout: 15000,
   headers: {
     [HEADER.TENANT]: ENVIROMENT.TENANT,

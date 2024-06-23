@@ -7,8 +7,6 @@ import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
 import { CENTER, ROW, SPACE_BETWEEN } from '#/styles/positions';
 
-export const LOGO_HEIGHT = verticalScale(16);
-
 export const styles = StyleSheet.create({
   background: {
     backgroundColor: background
@@ -22,13 +20,15 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
     flexDirection: ROW,
+    height: verticalScale(60),
     justifyContent: SPACE_BETWEEN,
     paddingBottom: verticalScale(12)
   },
   icon: {
-    margin: scale(10)
+    marginHorizontal: scale(10)
   },
   iconSection: {
+    alignItems: CENTER,
     flexDirection: ROW
   },
   text: {

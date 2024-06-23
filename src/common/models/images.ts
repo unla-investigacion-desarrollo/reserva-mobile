@@ -1,7 +1,6 @@
-import api from '../config/api';
-import { ENVIROMENT } from '../constants/envs';
+import api, { apiBaseURL } from '../config/api';
 
 export const buildImageUrl = (url: string) => ({
-  uri: `${ENVIROMENT.BASE_URL}/storage/${url}`,
+  uri: `${apiBaseURL}/storage/${url}`,
   headers: api.headers
 });

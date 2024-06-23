@@ -17,6 +17,7 @@ import HomeIcon from './svgs/home.svg';
 import LockIcon from './svgs/lock.svg';
 import MapPinIcon from './svgs/map-pin.svg';
 import PawIcon from './svgs/paw.svg';
+import PlusIcon from './svgs/plus.svg';
 import SearchIcon from './svgs/search.svg';
 import TreeIcon from './svgs/tree.svg';
 import UserIcon from './svgs/user.svg';
@@ -38,5 +39,6 @@ export {
   ArrowLeftIcon,
   LockIcon,
   EyeIcon,
-  EyeOffIcon
+  EyeOffIcon,
+  PlusIcon
 };

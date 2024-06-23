@@ -4,13 +4,15 @@ import { neutral } from '#/common/constants/colors';
 import { MEDIUM_WEIGHT, REGULAR_WEIGHT, SIZES } from '#/common/constants/fonts';
 import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
-import { CENTER, ROW } from '#/styles/positions';
+import { CENTER, ROW, SPACE_BETWEEN } from '#/styles/positions';
 
 export const ICON_SIZE = scale(18);
 
 export const styles = StyleSheet.create({
   body: {
+    flex: 1,
     gap: verticalScale(4),
+    justifyContent: SPACE_BETWEEN,
     paddingBottom: verticalScale(12),
     paddingHorizontal: scale(12),
     paddingTop: verticalScale(8)

@@ -47,6 +47,7 @@ export const SIZES = {
   XSMALL: scale(12),
   SMALL: scale(14),
   MEDIUM: scale(16),
+  MEDIUM_BIG: scale(20),
   BIG: scale(22),
   XBIG: scale(24),
   XXBIG: scale(28)
