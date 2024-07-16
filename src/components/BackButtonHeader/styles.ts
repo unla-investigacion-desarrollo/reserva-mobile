@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   backButtonText: (color: Color) => ({
     left: scale(-4),
-    ...fontMaker({ color, weight: REGULAR_WEIGHT, size: SIZES.MEDIUM_BIG })
+    ...fontMaker({ color, weight: REGULAR_WEIGHT })
   }),
   container: (top = 0, backgroundColor: Color = background) => ({
     paddingTop: verticalScale(top),
@@ -31,5 +31,11 @@ export const styles = StyleSheet.create({
     height: verticalScale(60),
     justifyContent: FLEX_START,
     paddingBottom: verticalScale(6)
-  }
+  },
+  text: (color: Color) => ({
+    flex: 1,
+    textAlign: 'right',
+    paddingHorizontal: scale(24),
+    ...fontMaker({ color, weight: REGULAR_WEIGHT, size: SIZES.MEDIUM_BIG })
+  })
 });

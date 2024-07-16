@@ -43,8 +43,9 @@ export const EXTRA_BOLD_WEIGHT = '800';
 export const BLACK_WEIGHT = '900';
 
 export const SIZES = {
-  XXSMALL: scale(10),
-  XSMALL: scale(12),
+  XXXSMALL: scale(10),
+  XXSMALL: scale(12),
+  XSMALL: scale(13),
   SMALL: scale(14),
   MEDIUM: scale(16),
   MEDIUM_BIG: scale(20),

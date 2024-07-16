@@ -31,8 +31,8 @@ export interface ButtonProps extends PressableProps {
   icon?: ImageSourcePropType;
   title?: TxOrString;
   iconSize?: number;
-  iconStroke?: ColorValue;
-  iconFill?: ColorValue;
+  iconStroke?: ColorValue | ((pressed: boolean) => ColorValue);
+  iconFill?: ColorValue | ((pressed: boolean) => ColorValue);
   iconStrokeWidth?: number;
   Svg?: SvgComponent;
   intent?: ButtonIntents;
@@ -78,7 +78,7 @@ export function Button({
         (pressed || active) && { ...pressedStyles },
         (disabled || loading) && { ...disabledStyles }
       ]}
-      disabled={disabled}>
+      disabled={disabled || loading}>
       <InnerContainer {...(innerStyle && { style: innerStyle })}>
         <>
           {loading ? (
@@ -91,8 +91,8 @@ export function Button({
                   width={iconSize}
                   height={iconSize}
                   strokeWidth={iconStrokeWidth}
-                  fill={iconFill}
-                  stroke={iconStroke}
+                  fill={typeof iconFill === 'function' ? iconFill(isPressed) : iconFill}
+                  stroke={typeof iconStroke === 'function' ? iconStroke(isPressed) : iconStroke}
                 />
               )}
             </>

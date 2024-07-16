@@ -31,13 +31,11 @@ export type CreateSightingParams = {
       description: string;
     }[];
   };
-  files: [
-    {
-      name: string;
-      uri: string;
-      mimeType: string;
-    }
-  ];
+  files: {
+    name: string;
+    uri: string;
+    mimeType: string;
+  }[];
 };
 
 export type CreateSightingResponse = {

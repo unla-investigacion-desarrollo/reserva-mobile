@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
     margin: scale(15)
   },
   button: {
-    borderRadius: 24,
-    borderWidth: 1,
+    borderRadius: scale(24),
+    borderWidth: scale(1),
     paddingHorizontal: scale(12),
     paddingVertical: verticalScale(8)
   },

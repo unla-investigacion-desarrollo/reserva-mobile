@@ -2,15 +2,25 @@ import { createPersistentStore } from '../utils';
 import { SessionStore } from './types';
 
 export const useSessionStore = createPersistentStore<SessionStore>(
-  (set, _) => ({
+  (set, get) => ({
     isLoggedIn: false,
     loginFields: null,
-    setIsLoggedIn: value => set({ isLoggedIn: value }, false, 'setIsLoggedIn'),
-    setLoginFields: loginFields => set({ loginFields }, false, 'setLoginFields'),
-    clearLoginFiels: () => set({ loginFields: null }, false, 'clearLoginFields')
+    userData: null,
+    lastLoginDate: null,
+    setIsLoggedIn: isLoggedIn => set({ isLoggedIn }, false, 'setIsLoggedIn'),
+    setLoginFields: loginFields =>
+      set({ loginFields, lastLoginDate: new Date().toUTCString() }, false, 'setLoginFields'),
+    clearLoginFields: () => set({ loginFields: null }, false, 'clearLoginFields'),
+    setUserData: userData => set({ userData }, false, 'setUserData'),
+    clearUserData: () => set({ userData: null }, false, 'clearLoginFields'),
+    setLastLoginDate: lastLoginDate =>
+      set({ lastLoginDate: lastLoginDate.toUTCString() }, false, 'setLastLoginDate'),
+    getLastLoginDate: () => {
+      const date = get().lastLoginDate;
+      return date ? new Date(date) : null;
+    }
   }),
   {
-    name: 'session-store',
-    partialize: state => ({ ...state, isLoggedIn: false })
+    name: 'session-store'
   }
 );

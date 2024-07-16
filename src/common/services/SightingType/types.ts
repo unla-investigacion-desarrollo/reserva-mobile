@@ -1,5 +1,5 @@
 import { SightingType } from '#/common/types/stightings';
 
-import { Pagination } from '../types';
+import { ApiResponse, Pagination } from '../types';
 
-export type GetSightingTypesResponse = Pagination<SightingType>;
+export type GetSightingTypesResponse = ApiResponse<Pagination<SightingType>>;

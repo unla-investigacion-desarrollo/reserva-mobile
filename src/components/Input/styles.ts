@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import fonts from '#/common/config/fonts';
 import { COLORS, error, primary } from '#/common/constants/colors';
+import { SIZES } from '#/common/constants/fonts';
+import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
 import { ABSOLUTE, CENTER, ROW } from '#/styles/positions';
 import { FULL_SIZE } from '#/styles/sizes';
-import { TEXT_SIZE } from '#/styles/text';
-
-const { SMALL } = TEXT_SIZE;
 
 export default StyleSheet.create({
   clearButton: {
@@ -28,23 +26,24 @@ export default StyleSheet.create({
     position: ABSOLUTE,
     top: verticalScale(8)
   },
-  inputContainer: (hasError = false) => ({
+  inputContainer: (hasError = false, bottomLineDesign?: boolean) => ({
     alignItems: CENTER,
     borderColor: hasError ? error.default : primary.default,
-    borderRadius: 12,
-    borderWidth: 1,
+    borderRadius: scale(bottomLineDesign ? 0 : 12),
+    ...(bottomLineDesign
+      ? { borderWidth: scale(0), borderBottomWidth: scale(1) }
+      : { borderWidth: scale(1) }),
     flexDirection: ROW,
     width: FULL_SIZE
   }),
   label: {
-    ...SMALL,
-    ...fonts.baseFont
+    ...fontMaker({ size: SIZES.SMALL })
   },
-  textInput: {
+  textInput: (hasIcon: boolean) => ({
     color: COLORS.black,
     flex: 1,
     height: verticalScale(48),
-    paddingLeft: scale(40),
+    paddingLeft: scale(hasIcon ? 40 : 10),
     paddingRight: scale(8)
-  }
+  })
 });

@@ -9,8 +9,5 @@ export const useCreateSighting = createMutation<
   CreateSightingParams,
   ErrorResponse
 >({
-  mutationFn: (params: CreateSightingParams) =>
-    createSighting(params).then(res => {
-      return res.json;
-    })
+  mutationFn: (params: CreateSightingParams) => createSighting(params)
 });

@@ -13,8 +13,10 @@ export const COLORS = {
   },
   accent: {
     lighter: '#FFDDB3',
+    light: '#FFB94F',
     default: '#FD9C0B',
-    darker: '#F2A917'
+    dark: '#C47907',
+    darker: '#805008'
   },
   succes: {
     lighter: '#59BF74',
@@ -22,9 +24,11 @@ export const COLORS = {
     darker: '#005225'
   },
   error: {
-    lighter: '#FF897D',
+    lighter: '#FFDAD6',
+    light: '#FF897D',
     default: '#DE3730',
-    darker: '#93000A'
+    dark: '#93000A',
+    darker: '#690005s'
   },
   neutral: {
     lighter: '#FFFFFF',

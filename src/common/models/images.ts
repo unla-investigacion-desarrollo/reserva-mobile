@@ -1,6 +1,6 @@
-import api, { apiBaseURL } from '../config/api';
+import { HEADER, apiBaseURL } from '../config/api';
 
-export const buildImageUrl = (url: string) => ({
+export const buildImageUrl = (url: string, authToken?: string) => ({
   uri: `${apiBaseURL}/storage/${url}`,
-  headers: api.headers
+  headers: { [HEADER.AUTHORIZATION]: authToken ? `Bearer ${authToken}` : '' }
 });

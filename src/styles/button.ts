@@ -10,9 +10,11 @@ export const BUTTON_INTENT_STYLES: ButtonIntentStyles = {
     [BUTTON_STATES.ENABLED]: {
       CONTAINER: {
         backgroundColor: primary.default,
+        borderColor: primary.default,
+        borderWidth: scale(2),
         paddingHorizontal: scale(24),
         paddingVertical: verticalScale(16),
-        borderRadius: 8
+        borderRadius: scale(8)
       },
       TEXT: {
         ...fontMaker({ color: neutral.lighter, weight: REGULAR_WEIGHT, size: SIZES.SMALL }),
@@ -21,7 +23,8 @@ export const BUTTON_INTENT_STYLES: ButtonIntentStyles = {
     },
     [BUTTON_STATES.DISABLED]: {
       CONTAINER: {
-        backgroundColor: neutral.default
+        backgroundColor: neutral.default,
+        borderColor: neutral.default
       }
     },
     [BUTTON_STATES.PRESSED]: {
@@ -38,10 +41,10 @@ export const BUTTON_INTENT_STYLES: ButtonIntentStyles = {
       CONTAINER: {
         backgroundColor: transparent,
         borderColor: primary.default,
-        borderWidth: 2,
+        borderWidth: scale(2),
         paddingHorizontal: scale(24),
         paddingVertical: verticalScale(16),
-        borderRadius: 8
+        borderRadius: scale(8)
       },
       TEXT: {
         ...fontMaker({ color: primary.default, weight: REGULAR_WEIGHT, size: SIZES.SMALL }),

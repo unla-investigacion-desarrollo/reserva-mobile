@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import appIcon from '#/assets/appIcons/icon.png';
 import { BUTTON_INTENTS } from '#/common/constants/button';
-import { neutral } from '#/common/constants/colors';
+import { accent, neutral } from '#/common/constants/colors';
 import { Button, ErrorText, FormInput, Text } from '#/components';
 
 import {
@@ -56,8 +56,14 @@ export function Login() {
             <LoginForm.Field name={FORM_FIELDS.rememberMe}>
               {field => (
                 <>
-                  <Checkbox value={field.state.value} onValueChange={value => field.handleChange(value)} />
-                  <Text>{FORM_FIELDS_NAMES.rememberMe}</Text>
+                  <Checkbox
+                    value={field.state.value}
+                    color={accent.default}
+                    onValueChange={value => field.handleChange(value)}
+                  />
+                  <Text onPress={() => field.handleChange(!field.state.value)}>
+                    {FORM_FIELDS_NAMES.rememberMe}
+                  </Text>
                 </>
               )}
             </LoginForm.Field>

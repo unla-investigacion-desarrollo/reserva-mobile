@@ -1,8 +1,10 @@
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Toast from 'react-native-toast-message';
 
 import { APIProvider } from '#/common/api';
 import { AUTH_STACK_ROUTES } from '#/common/constants/routes';
+import { toastConfig } from '#/styles/toast';
 
 function Navigation() {
   return (
@@ -20,6 +22,7 @@ export default function Layout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <APIProvider>
         <Navigation />
+        <Toast config={toastConfig} />
       </APIProvider>
     </GestureHandlerRootView>
   );

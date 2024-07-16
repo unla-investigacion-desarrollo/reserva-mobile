@@ -11,5 +11,5 @@ export const useGetSightingById = createQuery<
   ErrorResponse
 >({
   queryKey: [SIGHTING],
-  fetcher: params => getSightingById(params).then(res => res.data)
+  fetcher: params => getSightingById(params)
 });

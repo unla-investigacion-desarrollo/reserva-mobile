@@ -7,11 +7,12 @@ import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 
 import { primary } from '#/common/constants/colors';
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '#/common/constants/platform';
+import { WINDOW_WIDTH } from '#/common/constants/platform';
 import { getCategoryIcon } from '#/common/models/sightings';
 import { Sighting } from '#/common/types/stightings';
 import { lastItem } from '#/common/utils/array';
 import { ExternalImage, Text } from '#/components';
+import { CarouselDots } from '#/components/CarouselDots/CarouselDots';
 
 import { CATEGORY_ICON_SIZE, styles } from './styles';
 
@@ -23,25 +24,22 @@ export function SightingHeader({ sighting }: SightingHeaderProps) {
   const carouselRef = useRef<ICarouselInstance>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const Icon = getCategoryIcon(sighting.type.category);
+  const carouselData = [...sighting.images];
 
   return (
     <View>
       <View>
         <Carousel
           ref={carouselRef}
-          data={[...sighting.images]}
+          data={carouselData}
           width={WINDOW_WIDTH}
-          height={WINDOW_HEIGHT * (7 / 16)}
-          onSnapToItem={index => setCurrentImageIndex(index)}
+          height={WINDOW_WIDTH / (4 / 3.2)}
+          onProgressChange={(_, absProg) => setCurrentImageIndex(Math.round(absProg))}
           renderItem={({ item }) => (
             <ExternalImage source={item.url} style={styles.backgroundImage as ImageStyle} />
           )}
         />
-        <View style={styles.dotRow}>
-          {sighting.images.map((_, index) => {
-            return <View key={`dot-${index}`} style={styles.dot(index === currentImageIndex)} />;
-          })}
-        </View>
+        <CarouselDots data={carouselData} currentItemIndex={currentImageIndex} />
       </View>
       <View style={styles.headerInfo}>
         <Text style={styles.name}>{sighting.name}</Text>

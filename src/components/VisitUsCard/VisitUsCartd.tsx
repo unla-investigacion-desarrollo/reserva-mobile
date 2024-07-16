@@ -7,7 +7,7 @@ import { birdBackgroud } from '#/assets';
 import { WEBSITE_LINK } from '#/common/constants/links';
 
 import { Text } from '../Text';
-import { IMAGE_POSITION, styles } from './styles';
+import { styles } from './styles';
 
 export function VisitUsCard() {
   return (
@@ -15,7 +15,6 @@ export function VisitUsCard() {
       blurRadius={0}
       imageStyle={styles.backgroundImage as ImageStyle}
       contentFit="cover"
-      contentPosition={IMAGE_POSITION}
       style={styles.visitUsCard}
       source={birdBackgroud}>
       <View style={styles.content}>

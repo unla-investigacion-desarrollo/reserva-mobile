@@ -1,0 +1,26 @@
+export const NEW_SIGHTING_ES = {
+  name: 'Nombre',
+  nameLabel: 'Nombre de la espcecie',
+  scientificName: 'Nombre científico',
+  scientificNameLabel: 'Nombre científico de la especie',
+  type: 'Tipo de avistamiento',
+  typeLabel: 'Tipo de avistamiento',
+  typeLabelSubtitle: 'Definí primero si el avistamiento es de flora o fauna y luego seleccioná el tipo',
+  fields: 'Agregá información sobre el avistamiento',
+  fieldsLabel: 'Información sobre el avistamiento',
+  fieldsLabelSubtitle:
+    'Agrega cualquier información que creas importante. Podés incluír tantos campos como quieras',
+  title: 'Título',
+  description: 'Descripción',
+  Files: 'Imágenes',
+  createNewSighting: 'Creá un nuevo avistamiento',
+  removeField: 'Remover campo',
+  addField: 'Agregar nuevo campo',
+  submitSighting: 'Subit avistamiento',
+  addImages: 'Agrega imagenes del avistamiento',
+  imagesMax: 'Podés agregar un máximo de 3 imágenes',
+  pressToAddImage: 'Presioná para agregar una imagen',
+  selectAnOption: 'Seleccioná una opción',
+  pickFromGalery: 'Elegír de la galería',
+  takeAPhoto: 'Sacar una foto'
+};

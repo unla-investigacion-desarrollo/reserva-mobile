@@ -2,11 +2,14 @@ import { StyleSheet } from 'react-native';
 
 import fonts from '#/common/config/fonts';
 import { error } from '#/common/constants/colors';
-import { scale, verticalScale } from '#/common/utils/scaling';
+import { scale } from '#/common/utils/scaling';
 import { CENTER, FLEX_START, ROW } from '#/styles/positions';
 
 export const ERROR_ICON_PROPS = {
-  stroke: error.default
+  stroke: error.default,
+  width: scale(20),
+  height: scale(20),
+  strokeWidth: 2
 };
 
 export default StyleSheet.create({
@@ -16,8 +19,7 @@ export default StyleSheet.create({
     marginLeft: scale(5)
   },
   errorIcon: {
-    alignSelf: FLEX_START,
-    top: verticalScale(2)
+    alignSelf: FLEX_START
   },
   errorRow: {
     flexDirection: ROW,

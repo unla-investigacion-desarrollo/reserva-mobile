@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { TextStyle, View } from 'react-native';
 
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -6,16 +6,25 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ArrowLeftIcon } from '#/assets';
 import { black, transparent } from '#/common/constants/colors';
 import { Color } from '#/common/types/colors';
+import { TxOrString } from '#/common/types/i18n';
 
 import { Button } from '../Button';
+import { Text } from '../Text';
 import { BACK_ICON_SIZE, styles } from './styles';
 
 export type BackButtonHeaderProps = {
   backgroundColor?: Color;
   buttonColor?: Color;
+  text?: TxOrString;
+  textColor?: Color;
 };
 
-export function BackButtonHeader({ backgroundColor, buttonColor = black }: BackButtonHeaderProps) {
+export function BackButtonHeader({
+  backgroundColor,
+  buttonColor = black,
+  text,
+  textColor = black
+}: BackButtonHeaderProps) {
   const { top } = useSafeAreaInsets();
   return (
     <View style={styles.container(top, backgroundColor)}>
@@ -30,6 +39,11 @@ export function BackButtonHeader({ backgroundColor, buttonColor = black }: BackB
           style={styles.backButton}
           onPress={() => router.back()}
         />
+        {text && (
+          <Text style={styles.text(textColor) as TextStyle} tx={text}>
+            {text}
+          </Text>
+        )}
       </View>
     </View>
   );

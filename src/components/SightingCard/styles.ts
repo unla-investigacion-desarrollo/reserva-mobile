@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   },
   sightingCard: {
     backgroundColor: neutral.lighter,
-    borderRadius: 12,
+    borderRadius: scale(12),
     width: scale(172)
   },
   type: {
