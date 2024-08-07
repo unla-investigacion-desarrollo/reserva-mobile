@@ -7,7 +7,7 @@ import { colorWithOpacity } from '#/common/utils/color';
 import { fontMaker } from '#/common/utils/fonts';
 import { scale, verticalScale } from '#/common/utils/scaling';
 import { ABSOLUTE, CENTER } from '#/styles/positions';
-import { FULL_SIZE } from '#/styles/sizes';
+import { FULL_SIZE, THREE_QUARTER_SIZE } from '#/styles/sizes';
 
 export const IMAGE_ASPECT_RATIO = 4 / 3;
 export const IMAGE_WIDTH = WINDOW_WIDTH - 2 * scale(20);
@@ -32,6 +32,10 @@ export const styles = StyleSheet.create({
   },
   descriptionField: {
     height: verticalScale(90)
+  },
+  errorLabel: {
+    paddingLeft: scale(2),
+    paddingTop: verticalScale(4)
   },
   fieldContainer: {
     backgroundColor: background,
@@ -107,8 +111,8 @@ export const styles = StyleSheet.create({
     width: FULL_SIZE
   },
   modalImage: {
-    aspectRatio: 3 / 2,
-    width: FULL_SIZE
+    aspectRatio: 7 / 6,
+    width: THREE_QUARTER_SIZE
   },
   modalLabel: {
     paddingLeft: scale(4),
@@ -143,9 +147,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     ...fontMaker({ weight: MEDIUM_WEIGHT, size: SIZES.XBIG })
-  },
-  typeField: {
-    gap: scale(8)
   },
   typesSection: {
     paddingLeft: scale(12),

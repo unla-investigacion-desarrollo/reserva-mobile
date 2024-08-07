@@ -1,3 +1,6 @@
+import { z } from 'zod';
+
+import { FormZodValidators } from '#/common/types/form';
 import { Tx } from '#/common/types/i18n';
 import { ValueOf } from '#/common/types/utilities';
 import { translate } from '#/translations/utils';
@@ -70,3 +73,38 @@ export const FORM_FIELDS_PROPS: Record<(typeof FORM_TEXT_FIELDS | typeof FORM_FI
     textStyle: styles.descriptionField
   }
 } as const;
+
+const FILE_SCHEMA = {
+  fileName: z.string(),
+  fileUri: z.string(),
+  fileMimeType: z.string()
+};
+
+const FIELD_SCHEMA = {
+  title: z.string(),
+  description: z.string()
+};
+
+export const FORM_VALIDATIONS: Record<ValueOf<typeof FORM_FIELDS>, FormZodValidators> = {
+  name: {
+    onSubmit: z.string().min(1, translate('NewSighting.requiredField'))
+  },
+  scientificName: {
+    onSubmit: z.string().min(1, translate('NewSighting.requiredField'))
+  },
+  files: {
+    onSubmit: z.object(FILE_SCHEMA).array().min(1, translate('NewSighting.atLeastOneImage'))
+  },
+  type: {
+    onSubmit: z.string().min(1, translate('NewSighting.requiredField'))
+  },
+  fields: {
+    onSubmit: z.object(FIELD_SCHEMA).array().min(1, translate('NewSighting.atLeastOneField'))
+  },
+  title: {
+    onSubmit: z.string().min(1, translate('NewSighting.titleMissig'))
+  },
+  description: {
+    onSubmit: z.string().min(1, translate('NewSighting.descriptionMissing'))
+  }
+};

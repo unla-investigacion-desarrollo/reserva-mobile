@@ -17,3 +17,8 @@ export const PERMISSIONS_ES = {
     'Para poder sacar fotos tenés que ir a la configuración de la aplicación y permitir el acceso a la cámara',
   goToSettings: 'Ir a configuración'
 };
+
+export const ROUTES_ES = {
+  home: 'Inicio',
+  map: 'Mapa'
+};

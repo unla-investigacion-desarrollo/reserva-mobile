@@ -17,3 +17,4 @@ export * from './RadioGroup';
 export * from './CarouselDots';
 export * from './BackButtonHeader';
 export * from './CameraPermissionModal';
+export * from './SuccessModal';

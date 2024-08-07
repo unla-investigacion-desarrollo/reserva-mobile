@@ -22,5 +22,14 @@ export const NEW_SIGHTING_ES = {
   pressToAddImage: 'Presioná para agregar una imagen',
   selectAnOption: 'Seleccioná una opción',
   pickFromGalery: 'Elegír de la galería',
-  takeAPhoto: 'Sacar una foto'
+  takeAPhoto: 'Sacar una foto',
+  requiredField: 'Este campo es obligatorio',
+  atLeastOneImage: 'Incluí al menos una imagen',
+  atLeastOneField: 'Incluí al menos un campo',
+  titleMissig: 'Agregá un título a este campo',
+  descriptionMissing: 'Agrega una descripción a este campo',
+  successTitle: '¡El avistamiento se creó correctamente!',
+  successSubtitle:
+    'Por el momento los avistamientos no necesitan de aprovación para poder verse en la app, así que el nuevo avistamiento ya se puede ver en Inicio',
+  goToHome: 'Ir al Início'
 };

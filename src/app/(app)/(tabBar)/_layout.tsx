@@ -3,9 +3,10 @@ import { View } from 'react-native';
 import { Tabs } from 'expo-router';
 
 import { black, primary } from '#/common/constants/colors';
-import { ROUTE_ICONS, ROUTE_NAMES, TAB_BAR_ROUTES } from '#/common/constants/routes';
+import { ROUTE_ICONS, ROUTE_LABELS, TAB_BAR_ROUTES } from '#/common/constants/routes';
 import { TabIcon } from '#/components';
 import { tabBarStyles } from '#/styles/tabBar';
+import { translate } from '#/translations/utils';
 
 export default function Layout() {
   return (
@@ -22,7 +23,7 @@ export default function Layout() {
             key={route}
             name={route}
             options={{
-              tabBarLabel: ROUTE_NAMES[route],
+              tabBarLabel: translate(ROUTE_LABELS[route]),
               tabBarIcon: props => <TabIcon Icon={ROUTE_ICONS[route]} {...props} />
             }}
           />

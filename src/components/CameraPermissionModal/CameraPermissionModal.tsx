@@ -2,12 +2,10 @@ import { Linking, Modal, Pressable, TouchableWithoutFeedback, View } from 'react
 
 import { Image, ImageStyle } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Toast from 'react-native-toast-message';
 
 import { CrossCircleIcon, SettingsIcon, cameraImage } from '#/assets';
 import { BUTTON_INTENTS } from '#/common/constants/button';
 import { primary, transparent, white } from '#/common/constants/colors';
-import { isIos } from '#/common/constants/platform';
 import { showErrorToast } from '#/common/utils/toast';
 import { MODAL_ICON_SIZE } from '#/screens/NewSighting/styles';
 import { translate } from '#/translations/utils';

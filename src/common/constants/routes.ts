@@ -1,5 +1,7 @@
 import { HomeIcon, MapPinIcon } from '#/assets';
 
+import { Tx } from '../types/i18n';
+
 export const ROUTES = {
   Login: 'login',
   App: '(app)',
@@ -12,14 +14,19 @@ export const ROUTES = {
 } as const;
 
 export const ROUTE_NAMES = {
-  [ROUTES.Login]: 'Login',
-  [ROUTES.App]: 'App',
-  [ROUTES.NewSighting]: 'NewSighting',
-  [ROUTES.TabBar]: 'Tabs',
-  [ROUTES.HomeStack]: 'Home',
-  [ROUTES.Home]: 'Home',
-  [ROUTES.Sighting]: 'Sighting',
-  [ROUTES.Map]: 'Map'
+  Login: 'Login',
+  App: 'App',
+  NewSighting: 'NewSighting',
+  TabBar: 'Tabs',
+  HomeStack: 'Home',
+  Home: 'Home',
+  Sighting: 'Sighting',
+  Map: 'Map'
+} as const;
+
+export const ROUTE_LABELS: Record<(typeof TAB_BAR_ROUTES)[any], Tx> = {
+  [ROUTES.HomeStack]: 'Routes.home',
+  [ROUTES.Map]: 'Routes.map'
 } as const;
 
 export const ROUTE_LINKS = {

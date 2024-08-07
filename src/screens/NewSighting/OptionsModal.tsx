@@ -2,7 +2,7 @@ import { Modal, Pressable, TouchableWithoutFeedback, View } from 'react-native';
 
 import { Image, ImageStyle } from 'expo-image';
 
-import { CameraIcon, ImageIcon, globeImage } from '#/assets';
+import { CameraIcon, ImageIcon, cameraImage } from '#/assets';
 import { BUTTON_INTENTS } from '#/common/constants/button';
 import { primary, transparent, white } from '#/common/constants/colors';
 import { Button, Text } from '#/components';
@@ -16,7 +16,12 @@ export type ImageOptionsModalProps = {
   onTakeAPhoto: () => void;
 };
 
-export function OptionsModal({ closeModal, isOpen, onPickFromGalery, onTakeAPhoto }: ImageOptionsModalProps) {
+export default function OptionsModal({
+  closeModal,
+  isOpen,
+  onPickFromGalery,
+  onTakeAPhoto
+}: ImageOptionsModalProps) {
   return (
     <Modal
       animationType="fade"
@@ -28,7 +33,7 @@ export function OptionsModal({ closeModal, isOpen, onPickFromGalery, onTakeAPhot
       <TouchableWithoutFeedback onPress={closeModal}>
         <View style={styles.modalBackground}>
           <Pressable style={styles.modalContainer}>
-            <Image source={globeImage} style={styles.modalImage as ImageStyle} />
+            <Image source={cameraImage} style={styles.modalImage as ImageStyle} />
             <Text tx="NewSighting.selectAnOption" style={styles.modalLabel} />
             <View style={styles.modalButtons}>
               <Button

@@ -24,15 +24,17 @@ export type DotProps<TItem> = {
 
 export function Dot<TItem>({ item, index, currentIndex }: DotProps<TItem>) {
   const isAddImageItem = getIsAddImageItem(item);
-  const focusedColor = isAddImageItem ? primary.default : accent.default;
-  const unfocusedColor = isAddImageItem ? background : accent.lighter;
 
   const isFocus = index === currentIndex;
 
   const colorValue = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    backgroundColor: interpolateColor(colorValue.value, [0, 1], [unfocusedColor, focusedColor])
+    backgroundColor: interpolateColor(colorValue.value, [0, 1], [accent.lighter, accent.default])
+  }));
+
+  const addImageItemAnimatedStyle = useAnimatedStyle(() => ({
+    backgroundColor: interpolateColor(colorValue.value, [0, 1], [background, primary.default])
   }));
 
   useEffect(() => {
@@ -41,7 +43,9 @@ export function Dot<TItem>({ item, index, currentIndex }: DotProps<TItem>) {
 
   return (
     <View>
-      <Animated.View style={[styles.dot(isAddImageItem), animatedStyle]} />
+      <Animated.View
+        style={[styles.dot(isAddImageItem), isAddImageItem ? addImageItemAnimatedStyle : animatedStyle]}
+      />
       {isAddImageItem && (
         <PlusIcon
           width={ICON_SIZE}
