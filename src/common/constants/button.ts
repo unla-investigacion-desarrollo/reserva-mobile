@@ -16,3 +16,8 @@ export const ICON_POSITIONS = {
   LEFT: 'left',
   RIGHT: 'right'
 };
+
+export enum RADIO_BUTTON_STATES {
+  UNSELECTED = 'UNSELECTED',
+  SELECTED = 'SELECTED'
+}

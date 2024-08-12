@@ -1,7 +1,6 @@
-import api from '../config/api';
-import { ENVIROMENT } from '../constants/envs';
+import { HEADER, apiBaseURL } from '../config/api';
 
-export const buildImageUrl = (url: string) => ({
-  uri: `${ENVIROMENT.BASE_URL}/storage/${url}`,
-  headers: api.headers
+export const buildImageUrl = (url: string, authToken?: string) => ({
+  uri: `${apiBaseURL}/storage/${url}`,
+  headers: { [HEADER.AUTHORIZATION]: authToken ? `Bearer ${authToken}` : '' }
 });

@@ -38,6 +38,7 @@ export interface InputProps extends TextInputProps {
   iconStyle?: TextStyle;
   showClearButton?: boolean;
   hideText?: boolean;
+  bottomLineDesign?: boolean;
 }
 
 const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
@@ -57,27 +58,28 @@ const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
     iconColor,
     iconStyle,
     showClearButton,
-    hideText
+    hideText,
+    bottomLineDesign
   } = props;
   const [hiddenText, setHiddenText] = useState(hideText);
-  const HiddenTextIcon = hiddenText ? EyeIcon : EyeOffIcon;
+  const HiddenTextIcon = hiddenText ? EyeOffIcon : EyeIcon;
 
   const hasErrors = errors && !isEmpty(errors);
   return (
     <View style={[styles.container, containerStyle]}>
-      {label ? (
+      {label && (
         <Text tx={label} style={[styles.label, labelStyle, hasErrors && styles.errorlabel]}>
           {label}
         </Text>
-      ) : null}
-      <View style={[styles.inputContainer(hasErrors) as ViewStyle, inputContainerStyle]}>
+      )}
+      <View style={[styles.inputContainer(hasErrors, bottomLineDesign) as ViewStyle, inputContainerStyle]}>
         {!!Icon && <Icon stroke={iconColor} style={[styles.icon, iconStyle]} />}
         <TextInput
           placeholderTextColor={neutral.dark}
           ref={ref}
           autoCapitalize={autoCapitalize}
           autoComplete={autoComplete}
-          style={[styles.textInput, textStyle]}
+          style={[styles.textInput(!!Icon), textStyle]}
           onChangeText={onChangeText}
           value={value}
           secureTextEntry={hiddenText}
@@ -90,7 +92,7 @@ const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
                 onChangeText('');
               }
             }}>
-            <CrossIcon style={styles.clearButton} stroke={neutral.dark} />
+            <CrossIcon style={styles.clearButton} stroke={neutral.dark} strokeWidth={2} />
           </TouchableOpacity>
         )}
         {hideText && (
@@ -102,13 +104,13 @@ const InputComponent = (props: InputProps, ref: ForwardedRef<TextInput>) => {
           </TouchableOpacity>
         )}
       </View>
-      {hasErrors ? (
+      {hasErrors && (
         <View style={styles.errorList}>
           {errors.map((error, index) =>
             error ? <ErrorText textStyle={errorStyle} key={`${index}-${error}`} errorMessage={error} /> : null
           )}
         </View>
-      ) : null}
+      )}
     </View>
   );
 };

@@ -34,7 +34,10 @@ export default () => {
       ios: {
         supportsTablet: true,
         googleServicesFile: `./googleServices/${googleServicesRoute}/GoogleService-Info.plist`,
-        bundleIdentifier: bundleName
+        bundleIdentifier: bundleName,
+        infoPlist: {
+          NSAppTransportSecurity: { NSAllowsArbitraryLoads: true }
+        }
       },
       android: {
         adaptiveIcon: {
@@ -62,12 +65,7 @@ export default () => {
             }
           }
         ],
-        [
-          'expo-font',
-          {
-            fonts: fontRoutes
-          }
-        ]
+        ['expo-font', { fonts: fontRoutes }]
       ],
       extra: {
         eas: {

@@ -11,11 +11,13 @@ import { FULL_SIZE } from '#/styles/sizes';
 
 export const styles = StyleSheet.create({
   appIcon: {
-    borderRadius: 24,
+    borderRadius: scale(24),
     height: scale(95),
     width: scale(95)
   },
   appIconShadow: {
+    backgroundColor: accent.default,
+    borderRadius: scale(24),
     ...shadowStyles.baseShadow(black)
   },
   body: {

@@ -7,5 +7,5 @@ import { ErrorResponse } from '#/common/services/types';
 
 export const useGetTypes = createQuery<GetSightingTypesResponse | undefined, void, ErrorResponse>({
   queryKey: [SIGHTING_TYPE],
-  fetcher: () => getSightingTypes().then(res => res.data)
+  fetcher: () => getSightingTypes()
 });

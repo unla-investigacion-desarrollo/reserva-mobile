@@ -1,39 +1,39 @@
 import { useState } from 'react';
 
-import { router } from 'expo-router';
-
 import { useForm } from '@tanstack/react-form';
 import { zodValidator } from '@tanstack/zod-form-adapter';
 
 import { useLoginMutation } from '#/common/api';
-import { setAuthHeader } from '#/common/config/api';
-import { ROUTE_LINKS } from '#/common/constants/routes';
 import { useMount } from '#/common/hooks/useMount';
+import { useSession } from '#/common/hooks/useSession';
 import { LoginResponse } from '#/common/services/Auth/types';
 import { useSessionStore } from '#/common/stores/session';
+import { ValueOf } from '#/common/types/utilities';
 import { translate } from '#/translations/utils';
 
 import { FORM_DEFAULT_VALUES, FORM_FIELDS } from './constants';
 
 export const useLoginForm = () => {
-  const { setIsLoggedIn, loginFields, setLoginFields, clearLoginFiels } = useSessionStore();
+  const { loginFields, setLoginFields, clearLoginFields } = useSessionStore();
+  const { login } = useSession();
 
   const [responseError, setResponseError] = useState('');
 
-  const handleLoginResponse = (res?: LoginResponse) => {
+  const handleLoginResponse = (value: Record<ValueOf<typeof FORM_FIELDS>, string>, res?: LoginResponse) => {
     if (!res || !res.success) {
+      console.log(res);
       setResponseError(res?.result ?? translate('Error.connectionFailed'));
       return;
     }
-    setAuthHeader(res.data.accessToken);
-    setIsLoggedIn(true);
-    router.replace(ROUTE_LINKS.Home);
+    if (value.rememberMe) {
+      setLoginFields(value);
+    } else {
+      clearLoginFields();
+    }
+    login(res);
   };
 
-  const { mutateAsync } = useLoginMutation({
-    onSuccess: res => handleLoginResponse(res),
-    onError: res => setResponseError(res.result)
-  });
+  const { mutateAsync } = useLoginMutation();
 
   const LoginForm = useForm({
     validatorAdapter: zodValidator,
@@ -42,15 +42,9 @@ export const useLoginForm = () => {
       setResponseError('');
       await mutateAsync(value, {
         onSuccess: res => {
-          if (!res || !res.success) {
-            return;
-          }
-          if (value.rememberMe) {
-            setLoginFields(value);
-          } else {
-            clearLoginFiels();
-          }
-        }
+          handleLoginResponse(value, res);
+        },
+        onError: res => setResponseError(res.result)
       });
     }
   });

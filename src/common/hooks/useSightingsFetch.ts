@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { queryClient, useGetSightings, useGetTypes } from '../api';
+import { useQueryClient } from '@tanstack/react-query';
+
+import { useGetSightings, useGetTypes } from '../api';
 import { SIGHTING } from '../constants/queryKeys';
 import { flattenPaginatedSightingResponses } from '../models/sightings';
 
@@ -11,6 +13,8 @@ export type UseSightingFetchParams = {
 };
 
 export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParams) => {
+  const queryClient = useQueryClient();
+
   const [debouncedName, setDebouncedName] = useState<string | undefined>(name);
   const [userIsTyping, setuserIsTyping] = useState(false);
 
@@ -41,16 +45,10 @@ export const useSightingFetch = ({ type, name, size = 4 }: UseSightingFetchParam
   });
 
   const loadMoreSightings = () => {
-    console.log('isFetchingSightings in load more', isFetchingSightings);
-    console.log('hasNextPage in load more', hasNextPage);
     if (hasNextPage && !isFetchingSightings) {
-      console.log('got in');
       fetchNextPage();
     }
   };
-
-  useEffect(() => console.log('isFetchingSightings', isFetchingSightings), [isFetchingSightings]);
-  useEffect(() => console.log('hasNextPage', hasNextPage), [hasNextPage]);
 
   const isLoadingSightings = isLoading || userIsTyping;
 

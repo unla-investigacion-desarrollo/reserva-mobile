@@ -10,7 +10,7 @@ import { FULL_SIZE } from '#/styles/sizes';
 export const styles = StyleSheet.create({
   image: {
     aspectRatio: 1 / 1,
-    borderRadius: 40,
+    borderRadius: scale(40),
     width: scale(40)
   },
   name: {
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     gap: verticalScale(4)
   },
   scientificName: {
-    ...fontMaker({ color: neutral.default, size: SIZES.XSMALL, weight: REGULAR_WEIGHT }),
+    ...fontMaker({ color: neutral.default, size: SIZES.XXSMALL, weight: REGULAR_WEIGHT }),
     lineHeight: scale(20)
   },
   sightingTag: {

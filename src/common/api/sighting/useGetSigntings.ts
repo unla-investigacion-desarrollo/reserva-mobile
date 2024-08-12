@@ -12,7 +12,7 @@ export const useGetSightings = createInfiniteQuery<
 >({
   queryKey: [SIGHTING],
   fetcher: (variables, { pageParam }) => {
-    return getSightings({ ...variables, page: pageParam }).then(res => res.data);
+    return getSightings({ ...variables, page: pageParam });
   },
   getNextPageParam: lastPage => {
     if (!lastPage || lastPage.currentPage >= lastPage.amountOfPages) {

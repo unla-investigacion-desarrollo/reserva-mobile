@@ -1,6 +1,8 @@
 import { Redirect, Stack } from 'expo-router';
 
+import { setAuthHeader } from '#/common/config/api';
 import { MAIN_STACK_ROUTES } from '#/common/constants/routes';
+import { useMount } from '#/common/hooks/useMount';
 import { useSessionStore } from '#/common/stores/session';
 
 function Navigation() {
@@ -14,7 +16,13 @@ function Navigation() {
 }
 
 export default function Layout() {
-  const { isLoggedIn } = useSessionStore();
+  const { isLoggedIn, userData } = useSessionStore();
+
+  useMount(() => {
+    if (userData) {
+      setAuthHeader(userData.accessToken);
+    }
+  });
 
   if (isLoggedIn) {
     return <Navigation />;

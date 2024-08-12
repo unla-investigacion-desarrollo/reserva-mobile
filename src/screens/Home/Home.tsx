@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { FlatList, View } from 'react-native';
 
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
-import { SearchIcon } from '#/assets';
+import { PlusIcon, SearchIcon } from '#/assets';
 import { BUTTON_INTENTS } from '#/common/constants/button';
-import { neutral, primary } from '#/common/constants/colors';
+import { neutral, primary, white } from '#/common/constants/colors';
+import { ROUTES } from '#/common/constants/routes';
 import { useSightingFetch } from '#/common/hooks/useSightingsFetch';
 import { SightingType } from '#/common/types/stightings';
 import { Button, Input } from '#/components';
@@ -15,7 +17,7 @@ import i18n from '#/translations';
 
 import { SightingCards } from './SightingCards';
 import { SightingList } from './SightingList';
-import { TYPE_FILTERS_GAP, TYPE_HEADER_FOOTER_GAP, styles } from './styles';
+import { ICON_SIZE, TYPE_FILTERS_GAP, TYPE_HEADER_FOOTER_GAP, styles } from './styles';
 
 export function Home() {
   const [searchValue, setSearchValue] = useState('');
@@ -27,6 +29,7 @@ export function Home() {
     isFetchingNextSightings: isFetchingNextPageHome,
     isLoadingSightings: isLoadingHome,
     sightings: homeSightings,
+    hasNextPage: hasNextPageHome,
     sightingTypesData
   } = useSightingFetch({
     type: selectedType?.name
@@ -49,16 +52,27 @@ export function Home() {
   return (
     <View style={styles.home}>
       <StatusBar style="light" />
-      <Input
-        placeholder={i18n.t('Home.search')}
-        placeholderTextColor={neutral.dark}
-        value={searchValue}
-        onChangeText={setSearchValue}
-        Icon={SearchIcon}
-        iconColor={primary.default}
-        iconStyle={styles.searchIcon}
-        showClearButton
-      />
+      <View style={styles.searchBarRow}>
+        <Input
+          placeholder={i18n.t('Home.search')}
+          placeholderTextColor={neutral.dark}
+          value={searchValue}
+          onChangeText={setSearchValue}
+          Icon={SearchIcon}
+          containerStyle={styles.searchBar}
+          iconColor={primary.default}
+          iconStyle={styles.searchIcon}
+          showClearButton
+        />
+        <Button
+          onPress={() => router.navigate(ROUTES.NewSighting)}
+          intent={BUTTON_INTENTS.PRIMARY}
+          Svg={PlusIcon}
+          iconSize={ICON_SIZE}
+          iconStroke={white}
+          style={styles.newSightingButton}
+        />
+      </View>
       <View style={styles.typeFilters}>
         <FlatList
           horizontal
@@ -97,6 +111,7 @@ export function Home() {
           onEndReached={loadMoreHome}
           isLoading={isLoadingHome}
           isLoadingNextPage={isFetchingNextPageHome}
+          hasNextPage={hasNextPageHome}
         />
       )}
     </View>
